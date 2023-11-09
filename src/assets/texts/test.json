@@ -14,7 +14,7 @@
             {"value": 0, "text": "Světle modrá, šedá"},
             {"value": 1, "text": "Zelená, modrozelená"},
             {"value": 2, "text": "Modrá, tmavě modrá"},
-            {"value": 4, "text": "Hnědá"},
+            {"value": 3, "text": "Hnědá"},
             {"value": 4, "text": "Tmavě hnědá"}
         ]
     },
