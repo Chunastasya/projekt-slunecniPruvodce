@@ -1,0 +1,58 @@
+ [
+    {
+        "id": 0,
+        "minValue": -1,
+        "maxValue": -1,
+        "name": "Děti",
+        "SPF": "30+ - 50+", 
+        "text": "U dětí je důležité vždy chránit jejich jemnou pokožku před škodlivými slunečními paprsky. Používejte opalovací krém s vysokým factor ochrany před sluncem (SPF) a nanášejte ho hojně. Navíc je důležité, aby nosily ochranné oblečení, jako jsou klobouky a dlouhé rukávy, když tráví čas venku."
+    },
+    {
+        "id": 1,
+        "minValue": 0,
+        "maxValue": 6,
+        "name": "Typ pleti Fitzpatrick I",
+        "SPF": "30+ - 50+", 
+        "text": "Pokud máte typ pleti Fitzpatrick I, máte velmi světlou pleť, která vždy spálí a nikdy neztmavne. Je pro vás důležité přijmout extra opatření při vystavení slunci. Vyhněte se dlouhému pobytu na slunci, zejména během vrcholových hodin. Používejte opalovací krém s vysokým faktorem ochrany před sluncem (SPF) a nanášejte ho často, každé 2 hodiny nebo po pocení nebo plavání. Nošení ochranného oblečení a doplňků, jako je klobouk s širokou krempou a sluneční brýle, je nezbytné k ochraně vaší pleti před škodlivými UV paprsky."
+    },
+    {
+        "id": 2,
+        "minValue": 7,
+        "maxValue": 12,
+        "name": "Typ pleti Fitzpatrick II",
+        "SPF": "30+", 
+        "text": "Pokud máte typ pleti Fitzpatrick II, máte světlou pleť, která snadno spálí a málo se opálí. Abyste chránili svou pleť, naneste širokospektrální opalovací krém s vysokým faktorem ochrany před sluncem (SPF) před vycházkou ven. Nanášejte ho každé 2 hodiny nebo častěji, pokud se potíte nebo plavete. Vyhněte se slunci během vrcholových hodin a noste ochranné oblečení, jako jsou dlouhé rukávy, kalhoty a klobouk s širokkou krempou. Nezapomeňte také chránit své oči slunečními brýlemi s UV ochranou."
+    },
+    {
+        "id": 3,
+        "minValue": 13,
+        "maxValue": 18,
+        "name": "Typ pleti Fitzpatrick III",
+        "SPF": "15+", 
+        "text": "Pokud máte typ pleti Fitzpatrick III, máte středně světlou pleť, která se občas spálí a postupně se opálí. Je důležité chránit svou pleť před škodlivými slunečními paprsky. Naneste širokospektrální opalovací krém s mírně až vysokým faktorem ochrany před sluncem (SPF) před venkovními aktivitami. Nanášejte ho opakovaně každé 2 hodiny a po plavání nebo pocení. Nosíte ochranné oblečení, jako jsou dlouhé rukávy a klobouk s širokou krempou, abyste ochraňovali svoji pleť před UV zářením. Vyhněte se přímému slunečnímu světlu během vrcholových hodin a nezapomeňte chránit své oči slunečními brýlemi s UV ochranou."
+    },
+    {
+        "id": 4,
+        "minValue": 19,
+        "maxValue": 24,
+        "name": "Typ pleti Fitzpatrick IV",
+        "SPF": "15+", 
+        "text": "Pokud máte typ pleti Fitzpatrick IV, máte středně tmavou až olivovou pleť, která zřídka spálí a snadno se opálí. I když má vaše pleť nižší riziko spálení, je stále důležité chránit ji před UV zářením. Naneste širokospektrální opalovací krém s mírně až vysokým faktorem ochrany před sluncem (SPF) před vycházkou ven. Nanášejte ho každé 2 hodiny nebo po nadměrném pocení nebo plavání. Je rovněž důležité nosit ochranné oblečení a doplňky, jako je klobouk, sluneční brýle a dlouhé rukávy, abyste svoji pleť chránili před škodlivými UV paprsky. Vyhněte se přímému slunečnímu světlu během vrcholových hodin, abyste minimalizovali expozici slunci."
+    },
+    {
+        "id": 5,
+        "minValue": 25,
+        "maxValue": 32,
+        "name": "Typ pleti Fitzpatrick V",
+        "SPF": "15+", 
+        "text": "Pokud máte typ pleti Fitzpatrick V, máte tmavou pleť, která zřídka spálí a snadno se opálí. Přesto je stále nezbytné chránit se před sluncem, aby vaše pleť zůstala zdravá. Použijte širokospektrální opalovací krém s mírně až vysokým faktorem ochrany před sluncem (SPF) před venkovními aktivitami. Nanášejte ho každé 2 hodiny nebo po plavání nebo nadměrném pocení. Doporučuje se nošení ochranného oblečení, jako je klobouk s širokou krempou, sluneční brýle a lehké rukávy s dlouhými rukávy, abyste minimalizovali expozici slunci. Vyhněte se přímému slunečnímu světlu během vrcholových hodin, abyste snížili riziko UV záření."
+    },
+    {
+        "id": 6,
+        "minValue": 33,
+        "maxValue": 40,
+        "name": "Typ pleti Fitzpatrick VI",
+        "SPF": "15+", 
+        "text": "Pokud máte typ pleti Fitzpatrick VI, máte velmi tmavou pleť, která zřídka spálí a snadno se opálí. I když má vaše pleť vyšší přirozenou ochranu proti slunci, je stále důležité chránit ji před škodlivými UV paprsky. Naneste širokospektrální opalovací krém s mírně až vysokým faktorem ochrany před sluncem (SPF) před vycházkou ven. Nanášejte ho každé 2 hodiny nebo po nadměrném pocení nebo plavání. Zakryjte vystavenou pokožku dlouhým oblečením, kloboukem s širokou krempou a slunečními brýlemi, abyste minimalizovali expozici slunečnímu záření. Vyhněte se přímému slunečnímu světlu během vrcholových hodin, abyste dále snížili riziko UV záření."
+    }
+] 
