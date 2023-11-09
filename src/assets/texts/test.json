@@ -1,0 +1,121 @@
+[
+    {
+        "id": 0,
+        "question": "Jste mladší než 13 let?",
+        "answers": [
+            {"value": -1, "text": "Ano"},
+            {"value": 0, "text": "Ne"}
+        ]
+    },
+    {
+        "id": 1,
+        "question": "Jaká je barva vašich očí?",
+        "answers": [
+            {"value": 0, "text": "Světle modrá, šedá"},
+            {"value": 1, "text": "Zelená, modrozelená"},
+            {"value": 2, "text": "Modrá, tmavě modrá"},
+            {"value": 4, "text": "Hnědá"},
+            {"value": 4, "text": "Tmavě hnědá"}
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Jaká je barva vašich vlasů?",
+        "answers": [
+            {"value": 0, "text": "Zrzavá"},
+            {"value": 1, "text": "Blond"},
+            {"value": 2, "text": "Kasťanová, tmavě blond"},
+            {"value": 3, "text": "Tmavě hnědá"},
+            {"value": 4, "text": "Černá"}
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Jaká je přirozená barva vaší pokožky (bez opálení)?",
+        "answers": [
+            {"value": 0, "text": "Alabastrově bílá"},
+            {"value": 1, "text": "Velmi světlá"},
+            {"value": 2, "text": "Světlá s béžovým nebo zlatavým nádechem"},
+            {"value": 3, "text": "Olivová, světle hnědá"},
+            {"value": 4, "text": "Tmavě hnědá, černá"}
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Máte pihy na nevystavených oblastech?",
+        "answers": [
+            {"value": 0, "text": "Mnoho"},
+            {"value": 1, "text": "Několik"},
+            {"value": 2, "text": "Pár"},
+            {"value": 3, "text": "Pár jednotlivých"},
+            {"value": 4, "text": "Žádné"}
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Co se děje, když zůstanete na slunci?",
+        "answers": [
+            {"value": 0, "text": "Bolí vás kůže, zarudne, vznikají puchýře a šupinky"},
+            {"value": 1, "text": "Vznikají puchýře a šupinky"},
+            {"value": 2, "text": "Spálíte se, někdy následuje šupinkování"},
+            {"value": 3, "text": "Málokdy se spálíte, občas následuje šupinkování"},
+            {"value": 4, "text": "Nikdy jste se nespálili"}
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Do jaké míry se opálíte?",
+        "answers": [
+            {"value": 0, "text": "Téměř nebo vůbec neopadíte"},
+            {"value": 1, "text": "Opálíte se světlou barvou"},
+            {"value": 2, "text": "Opálíte se střední barvou"},
+            {"value": 3, "text": "Opálíte se snadno"},
+            {"value": 4, "text": "Rychle se zbarvíte tmavě hnědě"}
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Zbarvíte se do několika hodin po vystavení slunci?",
+        "answers":
+        [
+            {"value": 0, "text": "Nikdy"},
+            {"value": 1, "text": "Zřídka"},
+            {"value": 2, "text": "Občas"},
+            {"value": 3, "text": "Často"},
+            {"value": 4, "text": "Vždy"}
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Jak reaguje vaše pokožka na slunce?",
+        "answers": [
+            {"value": 0, "text": "Velmi citlivá"},
+            {"value": 1, "text": "Citlivá"},
+            {"value": 2, "text": "Normální"},
+            {"value": 3, "text": "Velmi odolná"},
+            {"value": 4, "text": "Nikdy jste neměli problém"}
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Kdy jste naposledy vystavovali své tělo slunečnímu záření nebo uměle opalovali?",
+        "answers": [
+            {"value": 0, "text": "Před více než 3 měsíci"},
+            {"value": 1, "text": "Před 2-3 měsíci"},
+            {"value": 2, "text": "Před 1-2 měsíci"},
+            {"value": 3, "text": "Před méně než měsícem"},
+            {"value": 4, "text": "Před méně než 2 týdny"}
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Vystavovali jste slunci oblast kůže, která má být ošetřena?",
+        "answers": [
+            {"value": 0, "text": "Nikdy"},
+            {"value": 1, "text": "Skoro nikdy"},
+            {"value": 2, "text": "Občas"},
+            {"value": 3, "text": "Často"},
+            {"value": 4, "text": "Vždy"}
+        ]
+    }
+]
