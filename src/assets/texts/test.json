@@ -11,7 +11,7 @@
         "id": 1,
         "question": "Jaká je barva vašich očí?",
         "answers": [
-            {"value": 0, "text": "Světle modrá, šedá"},
+            {"value": 0, "text": "Světle modrá, šedá", "image": "..."},
             {"value": 1, "text": "Zelená, modrozelená"},
             {"value": 2, "text": "Modrá, tmavě modrá"},
             {"value": 3, "text": "Hnědá"},
