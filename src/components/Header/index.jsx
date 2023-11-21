@@ -1,15 +1,17 @@
 import React from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from './img/Logo.png'
 
 const Header = () => {
     return (
         <header className="header">
-        <img className='header_logo' src={Logo}></img>
+        <NavLink to=''>
+            <img className='header_logo' src={Logo}></img>
+        </NavLink>        
         <nav className='header_links'>
-            <Link to='/test' className='header_link'>Test</Link>
-            <Link to='/map' className='header_link'>Mapa</Link>
+            <NavLink to='/test' className='header_link'>Test</NavLink>
+            <NavLink to='/map' className='header_link'>Mapa</NavLink>
             </nav>
         </header>
     )

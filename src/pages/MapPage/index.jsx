@@ -46,7 +46,7 @@ const MapPage = () => {
   const [scale, setScale] = useState(1);
   return (
     <div className="map-page">
-      Map
+      <h1>Mapa UV Indexu</h1>
       <div className="map">
         <ComposableMap
           data-tip=""
