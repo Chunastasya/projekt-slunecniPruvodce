@@ -1,0 +1,16 @@
+.map {
+    width: calc(100vh);
+    max-width: 100%;
+}
+.rsm-svg {
+    width: 100%;
+    max-height: calc(100vh - 200px);
+}
+
+.rsm-geography {
+    fill: #F6D6CB;
+    stroke: #E5BC9B;
+    stroke-width: 0.25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

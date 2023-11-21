@@ -6,7 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { ErrorPage } from './pages/ErrorPage';
 import { TestPage } from './pages/TestPage';
 import { TestResultPage } from './pages/TestResultPage';
-import { MapPage } from './pages/MapPage';
+import MapPage from './pages/MapPage';
 import './global.css';
 
 const router = createBrowserRouter([
