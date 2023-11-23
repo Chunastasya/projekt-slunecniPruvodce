@@ -1,0 +1,13 @@
+.rsm-svg {
+    width: 100%;
+    max-height: calc(100vh - 250px);
+}
+
+.rsm-geography {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.rsm-geography:focus {
+    outline: none;
+    fill: #E5BC9B;
+}
