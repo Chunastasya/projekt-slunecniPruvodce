@@ -4,14 +4,14 @@ import { Outlet } from "react-router-dom";
 
 const App = () => {
     return (
-        <div className="main_container">
-            <Header />
-            <main className="content">
-            <Outlet />
-            </main>
-            <Footer />
-        </div>
-    )
+      <div className="main_container">
+        <Header />
+        <main className="content container">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    );
 }
 
 export default App;

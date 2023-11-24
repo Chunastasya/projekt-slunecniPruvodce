@@ -1,6 +1,6 @@
 .rsm-svg {
     width: 100%;
-    max-height: calc(100vh - 250px);
+    max-height: 100%;
 }
 
 .rsm-geography {
