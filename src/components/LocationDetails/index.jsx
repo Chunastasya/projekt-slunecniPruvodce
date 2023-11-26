@@ -2,6 +2,28 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 const LocationDetails = ({ uv, location }) => {
+  const getTime = (min) => {
+    let result = "";
+    const hours = Math.floor(min / 60);
+    const minuts = min % 60;
+    if (hours) {
+      result += `${hours} hodin${
+        hours % 10 > 3 || Math.floor(hours / 10) === 1
+          ? ""
+          : hours % 10 === 1
+          ? "a"
+          : "y"
+      } `;
+    }
+    result += `${minuts} minut${
+      minuts % 10 > 3 || Math.floor(minuts / 10) === 1
+        ? ""
+        : minuts % 10 === 1
+        ? "a"
+        : "y"
+    }`;
+    return result;
+  };
   return (
     <div className="location-details">
       <h2 className="location-details__title">{location.name}</h2>
@@ -25,10 +47,7 @@ const LocationDetails = ({ uv, location }) => {
                     (value, i) => (
                       <li className="uv-item" key={i}>
                         <div className="uv-item__title">Typ {i + 1}</div>
-                        <div className="uv-item__text">
-                          {i}
-                          {value}
-                        </div>
+                        <div className="uv-item__text">{getTime(value)}</div>
                       </li>
                     )
                   )}
@@ -45,9 +64,12 @@ const LocationDetails = ({ uv, location }) => {
         </div>
         <div className="location-details__footer">
           <div className="location-details__subtitle">Nevíte svůj typ?</div>
-          <button className="base-btn location-details__btn--test">
+          <Link
+            to="/test"
+            className="base-btn base-btn--right location-details__btn--test"
+          >
             Spustit test
-          </button>
+          </Link>
         </div>
       </div>
     </div>

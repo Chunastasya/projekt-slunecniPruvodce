@@ -6,6 +6,9 @@
 
 html {
   font-family: "Open Sans", sans-serif;
+  --primary-dark: #854b39;
+  --primary-light: #e5bc9b;
+  --emphasis: #f5972a;
 }
 
 body {
@@ -17,8 +20,9 @@ h3 {
   font-family: Girassol, serif;
 }
 h1 {
-  color: #854b39;
+  color: var(--primary-dark);
   font-size: 3rem;
+  margin: 0 0 20px;
 }
 .main_container {
   display: flex;
@@ -27,15 +31,44 @@ h1 {
   min-height: 100vh;
 }
 
-.content {
-  flex-grow: 1;
-}
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
-  @media (min-width: 1216px) {
+  @media (min-width: 1416px) {
     padding: 0;
   }
+}
+
+.content {
+  flex-grow: 1;
+  margin-top: 40px;
+}
+
+.base-btn {
+  border-radius: 50px;
+  background: var(--primary-dark);
+  padding: 8px 24px;
+  color: white;
+  font-family: Girassol, serif;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+.base-btn:hover {
+  color: var(--emphasis);
+}
+.base-btn--emphasis {
+  background: var(--emphasis);
+  color: var(--primary-dark);
+}
+.base-btn--emphasis:hover {
+  color: var(--primary-light);
+}
+.base-btn--left {
+  border-radius: 10px 50px 50px 50px;
+}
+.base-btn--right {
+  border-radius: 50px 10px 50px 50px;
 }

@@ -31,12 +31,14 @@ const MapPage = () => {
     }
   };
   return (
-    <div className="map-page">
-      <h1>Mapa UV Indexu</h1>
-      <div className="map__content">
+    <div
+      className={dataUV ? "map-content map-content--details" : "map-content"}
+    >
+      <div className="map-content__main">
+        <h1>Mapa UV Indexu</h1>
         <Map onSelectCoordinates={getUVIndex} />
-        {dataUV ? <LocationDetails {...dataUV} /> : null}
       </div>
+      {dataUV ? <LocationDetails {...dataUV} /> : null}
     </div>
   );
 };

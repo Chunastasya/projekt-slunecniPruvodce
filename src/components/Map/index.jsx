@@ -50,6 +50,7 @@ const Map = ({ onSelectCoordinates }) => {
       width={400}
       height={300}
       projection="geoAzimuthalEqualArea"
+      className="map"
       projectionConfig={{
         rotate: [-20.0, -55.0, 0],
         scale: 300,

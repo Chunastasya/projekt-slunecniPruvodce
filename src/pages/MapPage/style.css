@@ -1,10 +1,22 @@
-.map-page {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 100px);
-}
-.map__content {
+.map-content {
   display: flex;
   flex-grow: 1;
-  max-height: calc(100vh - 100px);
+  position: relative;
+  gap: 40px;
+}
+
+.map-content--details:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  right: 0;
+  transform: translateX(50vw);
+  background: var(--primary-dark);
+  z-index: -1;
+}
+.map-content__main {
+  flex-grow: 1;
+  padding-bottom: 20px;
 }

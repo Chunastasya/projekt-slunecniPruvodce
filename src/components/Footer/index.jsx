@@ -4,10 +4,12 @@ import './style.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
-            Footer
-        </footer>
-    )
+      <footer className="footer">
+        Maryna Dukhnich, Anastasiia Chuiko
+        <br />
+        Czechitas, Digitální akademie: Web, 2023
+      </footer>
+    );
 }
 
 export default Footer;
