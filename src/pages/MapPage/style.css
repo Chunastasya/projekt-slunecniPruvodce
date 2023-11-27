@@ -20,3 +20,17 @@
   flex-grow: 1;
   padding-bottom: 20px;
 }
+.map-content__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.map-content__input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  width: 250px;
+  margin-left: 8px;
+}

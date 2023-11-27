@@ -1,7 +1,7 @@
 import "./style.css";
 import { Link } from "react-router-dom";
 
-const LocationDetails = ({ uv, location }) => {
+const LocationDetails = ({ uv, location, date }) => {
   const getTime = (min) => {
     let result = "";
     const hours = Math.floor(min / 60);
@@ -32,7 +32,9 @@ const LocationDetails = ({ uv, location }) => {
           {uv.sun_info.sun_position.altitude > 0 ? (
             <>
               <div className="location-details__section">
-                <div className="location-details__subtitle">Teď</div>
+                <div className="location-details__subtitle">
+                  {date ? new Date(date).toLocaleString() : "Teď"}
+                </div>
                 <ul className="location-details__list">
                   <li className="uv-item">
                     <div className="uv-item__title">UV Index</div>
