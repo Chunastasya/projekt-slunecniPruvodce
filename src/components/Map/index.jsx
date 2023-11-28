@@ -1,21 +1,25 @@
 import "./style.css";
 import { useState } from "react";
 import { memo } from "react";
-
+import node from "../../assets/texts/node.json";
 import {
   ComposableMap,
   Geographies,
   Geography,
-  Annotation,
+  Marker,
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoPath } from "d3-geo";
 
 const geoUrl =
-  "https://raw.githubusercontent.com/prisma-capacity/d3-map-europe/master/data/europe.topo.json";
+  "https://github.com/amcharts/amcharts4/blob/master/dist/geodata/es2015/json/region/world/europeUltra.json";
 
 const Map = ({ onSelectCoordinates }) => {
-  const [scale, setScale] = useState(1);
+  const [zoomData, setZoomData] = useState({
+    coordinates: [0, 0],
+    zoom: 1,
+  });
+  const [coordinates, setCoordinates] = useState([]);
   const onGeoEventFactory = (handleCoordinates, geo, projection) => {
     const gPath = geoPath().projection(projection);
 
@@ -29,20 +33,22 @@ const Map = ({ onSelectCoordinates }) => {
       const svg = evt.nativeEvent.srcElement.viewportElement;
 
       //adjust for SVG width on the page / internal rendering width
-      const adjustScale = scale * (svg.clientWidth / svg.viewBox.baseVal.width);
+      const adjustScale =
+        zoomData.zoom * (svg.clientWidth / svg.viewBox.baseVal.width);
 
       // these are the coords in SVG coordinate system
       const clickCoordsInsideSvg = [
         geoX + cx / adjustScale,
         geoY + cy / adjustScale,
       ];
+      const c = projection.invert(clickCoordsInsideSvg);
       // 'unproject' the SVG coords to get lat and long
-      handleCoordinates(
-        projection.invert(clickCoordsInsideSvg),
-        geo,
-        projection
-      );
+      handleCoordinates(c, geo, projection);
+      setCoordinates(c);
     };
+  };
+  const handleZoom = (geo) => {
+    setZoomData(geo);
   };
   return (
     <ComposableMap
@@ -56,8 +62,8 @@ const Map = ({ onSelectCoordinates }) => {
         scale: 300,
       }}
     >
-      <ZoomableGroup zoom={1} center={[10.0, 50.0]}>
-        <Geographies geography={geoUrl}>
+      <ZoomableGroup zoom={1} center={[10.0, 50.0]} onMoveEnd={handleZoom}>
+        <Geographies geography={node}>
           {({ geographies, projection }) =>
             geographies.map((geo) => {
               return (
@@ -77,21 +83,12 @@ const Map = ({ onSelectCoordinates }) => {
             })
           }
         </Geographies>
+        {coordinates.length ? (
+          <Marker coordinates={coordinates}>
+            <circle r={2} fill="#f5972a" />
+          </Marker>
+        ) : null}
       </ZoomableGroup>
-      {/* <Annotation
-            subject={[2.3522, 48.8566]}
-            dx={-90}
-            dy={-30}
-            connectorProps={{
-              stroke: "#FF5533",
-              strokeWidth: 3,
-              strokeLinecap: "round"
-            }}
-          >
-            <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
-              {"Paris"}
-            </text>
-          </Annotation> */}
     </ComposableMap>
   );
 };
