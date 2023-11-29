@@ -22,9 +22,14 @@
 }
 .map-content__header {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
+  margin-bottom: 20px;
+}
+.map-content__header h1 {
+  margin-bottom: 0;
 }
 .map-content__input {
   border: 1px solid #ccc;
