@@ -2,8 +2,10 @@ import "./style.css";
 import { useState, useEffect } from "react";
 import Map from "../../components/Map";
 import LocationDetails from "../../components/LocationDetails";
+import Loader from "../../components/Loader";
 const MapPage = () => {
   const [dataUV, setDataUV] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [coordinates, setCoordinates] = useState([]);
   const [date, setDate] = useState("");
   const [initialDate, setInitialDate] = useState(
@@ -14,6 +16,7 @@ const MapPage = () => {
       if (!(coordinates && coordinates.length > 1)) {
         return;
       }
+      setIsLoading(true);
       try {
         const myHeaders = new Headers();
         myHeaders.append("x-access-token", "openuv-3bsazrlo7ffpej-io");
@@ -36,6 +39,7 @@ const MapPage = () => {
       } catch (error) {
         console.log("error", error);
       }
+      setIsLoading(false);
     };
     getUVIndex();
   }, [coordinates, date]);
@@ -47,29 +51,32 @@ const MapPage = () => {
     });
   };
   return (
-    <div
-      className={dataUV ? "map-content map-content--details" : "map-content"}
-    >
-      <div className="map-content__main">
-        <div className="map-content__header">
-          <h1>Mapa UV Indexu</h1>
-          <label className="map-content__label">
-            Čas
-            <input
-              type="datetime-local"
-              className="map-content__input"
-              value={date}
-              max={initialDate}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </label>
+    <>
+      {isLoading ? <Loader /> : null}
+      <div
+        className={dataUV ? "map-content map-content--details" : "map-content"}
+      >
+        <div className="map-content__main">
+          <div className="map-content__header">
+            <h1>Mapa UV Indexu</h1>
+            <label className="map-content__label">
+              Čas
+              <input
+                type="datetime-local"
+                className="map-content__input"
+                value={date}
+                max={initialDate}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </label>
+          </div>
+          <Map onSelectCoordinates={chooseLocation} />
         </div>
-        <Map onSelectCoordinates={chooseLocation} />
+        {dataUV && dataUV.uv && dataUV.location ? (
+          <LocationDetails {...dataUV} date={date} />
+        ) : null}
       </div>
-      {dataUV && dataUV.uv && dataUV.location ? (
-        <LocationDetails {...dataUV} date={date} />
-      ) : null}
-    </div>
+    </>
   );
 };
 
