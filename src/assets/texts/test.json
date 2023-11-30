@@ -2,6 +2,7 @@
   {
     "id": 0,
     "question": "Jste mladší než 13 let?",
+    "image": "/img/test/q0.jpg",
     "answers": [
       {
         "value": -1,
@@ -140,6 +141,7 @@
   {
     "id": 5,
     "question": "Co se děje, když zůstanete na slunci?",
+    "image": "/img/test/q5.jpg",
     "answers": [
       {
         "value": 0,
@@ -166,11 +168,11 @@
   {
     "id": 6,
     "question": "Do jaké míry se opálíte?",
+    "image": "/img/test/q6.jpg",
     "answers": [
       {
         "value": 0,
-        "text": "Téměř nebo vůbec neopadíte",
-        "image": "/img/test/q1/v0.jpg"
+        "text": "Téměř nebo vůbec neopadíte"
       },
       {
         "value": 1,
@@ -193,6 +195,7 @@
   {
     "id": 7,
     "question": "Zbarvíte se do několika hodin po vystavení slunci?",
+    "image": "/img/test/q7.jpg",
     "answers": [
       {
         "value": 0,
@@ -219,6 +222,7 @@
   {
     "id": 8,
     "question": "Jak reaguje vaše pokožka na slunce?",
+    "image": "/img/test/q8.jpg",
     "answers": [
       {
         "value": 0,
@@ -245,6 +249,7 @@
   {
     "id": 9,
     "question": "Kdy jste naposledy vystavovali své tělo slunečnímu záření nebo uměle opalovali?",
+    "image": "/img/test/q9.jpg",
     "answers": [
       {
         "value": 0,
@@ -271,6 +276,7 @@
   {
     "id": 10,
     "question": "Vystavovali jste slunci oblast kůže, která má být ošetřena?",
+    "image": "/img/test/q10.jpg",
     "answers": [
       {
         "value": 0,
