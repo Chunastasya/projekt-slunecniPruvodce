@@ -10,7 +10,7 @@
   transform: translate(-50%, -50%); */
   @media (min-width: 768px) {
     padding: 32px 0 32px 32px;
-    position: static;
+    position: relative;
     transform: none;
     border-radius: 50px 0 0 0;
   }
@@ -81,4 +81,15 @@
 
 .location-details__btn--test {
   display: block;
+}
+
+.location-details__close {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

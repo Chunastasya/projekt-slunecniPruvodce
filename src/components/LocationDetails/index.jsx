@@ -1,6 +1,6 @@
 import "./style.css";
 import { Link } from "react-router-dom";
-
+import closeCross from './img/close-cross.svg'
 const LocationDetails = ({ uv, location, date }) => {
   const getTime = (min) => {
     let result = "";
@@ -26,6 +26,7 @@ const LocationDetails = ({ uv, location, date }) => {
   };
   return (
     <div className="location-details">
+      <img src={closeCross} alt="close button" role="button" className="location-details__close" />
       <h2 className="location-details__title">{location.name}</h2>
       <div className="location-details__card">
         <div className="location-details__body">
