@@ -40,19 +40,6 @@ display: block;
     padding: 16px;
 }
 
-/* display: flex;
-width: 300px;
-height: 63px;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
-
-
-
-color: #FFF;
-text-align: center;
-font-family: Open Sans;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: normal; */
+.answer--selected {
+    background-color: var(--emphasis);
+}
