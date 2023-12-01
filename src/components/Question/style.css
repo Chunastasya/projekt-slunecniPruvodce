@@ -4,7 +4,7 @@
 border-radius: 20px;
 background: var(--main, #854B39);
 width: 300px;
-height: 200px;
+min-height: 150px;
 flex-shrink: 0;
 color: #FFF;
 text-align: center;
@@ -13,11 +13,38 @@ font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-padding: 16px;
+/* padding: 16px; */
+
 }
 
 .answers {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    
 }
+
+.test_image {
+border-radius: 20px 20px 0px 0px;
+width: 300px;
+height: 200px;
+flex-shrink: 0;
+display: block;
+}
+
+/* display: flex;
+width: 300px;
+height: 63px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+
+
+color: #FFF;
+text-align: center;
+font-family: Open Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal; */
