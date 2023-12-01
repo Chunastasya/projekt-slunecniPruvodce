@@ -8,10 +8,10 @@ const Question = ({currentQuestion}) => {
       {
         currentQuestion.answers.map((answer) => (
             <div className="answer" key={answer.value}>
-                <div>
-                <img className="test_image" src="/img/test/q0/v0.jpg"></img>
-                </div>
-        <p>{answer.text}</p>
+                {answer.image? <img className="test_image" src={answer.image} alt={answer.text}></img> : null}
+                
+                
+        <p className="answer_text">{answer.text}</p>
         </div>
         ))}
 
