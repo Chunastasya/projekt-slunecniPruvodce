@@ -1,6 +1,6 @@
 .header {
   background-color: var(--primary-light);
-  padding: 8px 16px;
+  padding: 8px 0;
 }
 .header__content {
   display: flex;
@@ -30,4 +30,6 @@
 .header_logo {
   border-radius: 24px 24px 24px 8px;
   width: 80px;
+  background: var(--secondary-light);
+  padding: 4px;
 }
