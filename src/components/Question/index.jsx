@@ -1,13 +1,13 @@
 import "./style.css";
 import { useState } from "react";
 
-const Question = ({currentQuestion}) => {
+const Question = ({currentQuestion, onSelect}) => {
     const [currentAnswer, setCurrentAnswer] = useState(null);
 
 
         const handleClick = (answer) => {
              setCurrentAnswer(answer.value)
-          
+          onSelect({[currentQuestion.id] : answer.value})
           
           
         

@@ -8,7 +8,7 @@ export const TestPage = () => {
   console.log(currentQuestion)
   return (
     <div className="test">
-      <Question currentQuestion = {currentQuestion}></Question>
+      <Question onSelect = {(data) => console.log(data)} currentQuestion = {currentQuestion}></Question>
 
     </div>
 
