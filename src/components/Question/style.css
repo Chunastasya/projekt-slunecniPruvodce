@@ -1,5 +1,4 @@
 
-
 .answer {
 border-radius: 20px;
 background: var(--main, #854B39);
@@ -24,6 +23,7 @@ justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    cursor: pointer;
     
 }
 
@@ -33,6 +33,7 @@ width: 300px;
 height: 200px;
 flex-shrink: 0;
 display: block;
+
 }
 
 .answer_text {
@@ -57,8 +58,6 @@ display: flex;
 justify-content: start;
 align-items: flex-start;
 gap: 60px;
-
-
 }
 
 .answers {
