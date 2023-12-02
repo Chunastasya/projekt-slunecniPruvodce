@@ -33,3 +33,21 @@
   background: var(--secondary-light);
   padding: 4px;
 }
+
+
+.header-p {
+  font-family: Girassol, serif;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  color: var(--primary-dark);
+  
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom';
 export const HomePage = () => {
   return (
     <div className="homepage">
-      <header>
-        <h1>Sluneční Průvodce</h1>
-      </header>
+     
       <main>
         <section className='homepage__section'>
           <img className='home-page_img' src={Womens}></img>
