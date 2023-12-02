@@ -7,6 +7,15 @@ import "./style.css";
 export const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(test[1]);
   const [answers, setAnswers] = useState({});
+  const [enableQuestions, setEnableQuestions] = useState([]);
+  useEffect(() => {
+    setEnableQuestions(
+      test.map((q) => ({
+        id: q.id,
+        enabled: !answers.hasOwnProperty(q.id),
+      }))
+    );
+  }, [answers]);
 
   console.log(currentQuestion, answers);
   return (
