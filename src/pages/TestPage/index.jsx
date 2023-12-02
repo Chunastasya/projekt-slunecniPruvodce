@@ -26,8 +26,8 @@ export const TestPage = () => {
       let summ = 0;
       const arr = Object.values(answers);
       arr.forEach((cislo) => {
-        summ += cislo
-      })
+        summ += cislo;
+      });
       navigate(`/test-result/${summ}`);
     }
   }, [answers]);
@@ -40,7 +40,11 @@ export const TestPage = () => {
   return (
     <div className="test">
       <Question
-        onSelect={(data) => setAnswers({ ...answers, ...data })}
+        onSelect={(data) =>
+          data[0] === -1
+            ? navigate("/test-result/-1")
+            : setAnswers({ ...answers, ...data })
+        }
         currentQuestion={currentQuestion}
         currentAnswer={answers[currentQuestion.id]}
       ></Question>

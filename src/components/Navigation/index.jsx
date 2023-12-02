@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
   const [arrowsData, setArrowsData] = useState({});
+  console.log(currentId);
   useEffect(() => {
     const index = enableQuestions.findIndex((q) => q.id === currentId);
     let begin = enableQuestions.slice(0, index);
@@ -29,36 +30,42 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
         <button
           className={
             "base-btn base-btn--left base-btn--emphasis" +
-            (arrowsData.prev || arrowsData.prev === 0
+            (currentId !== 0 && (arrowsData.prev || arrowsData.prev === 0)
               ? ""
               : " base-btn--disabled")
           }
-          disabled={!(arrowsData.prev || arrowsData.prev === 0)}
+          disabled={
+            currentId === 0 || !(arrowsData.prev || arrowsData.prev === 0)
+          }
           onClick={() => goToQuestion(arrowsData.prev)}
         >
           <img className="image-arrow" src={Arrow}></img>
         </button>
       </div>
       {enableQuestions.map((q) => (
-        <div
+        <button
           key={q.id}
+          tabIndex={0}
+          disabled={currentId === 0}
           className={
             "circle" +
             (q.enabled ? "" : " circle--filled") +
             (currentId === q.id ? " circle--active" : "")
           }
           onClick={() => goToQuestion(q.id)}
-        ></div>
+        ></button>
       ))}
       <div className="buttons">
         <button
           className={
             "base-btn base-btn--right base-btn--emphasis" +
-            (arrowsData.next || arrowsData.next === 0
+            (currentId !== 0 && (arrowsData.next || arrowsData.next === 0)
               ? ""
               : " base-btn--disabled")
           }
-          disabled={!(arrowsData.next || arrowsData.next === 0)}
+          disabled={
+            currentId === 0 || !(arrowsData.next || arrowsData.next === 0)
+          }
           onClick={() => goToQuestion(arrowsData.next)}
         >
           <img src={Arrow}></img>
