@@ -8,7 +8,7 @@ html {
   font-family: "Open Sans", sans-serif;
   --primary-dark: #854b39;
   --primary-light: #e5bc9b;
-  --secondary-light: #F6D6CB;
+  --secondary-light: #f6d6cb;
   --emphasis: #f5972a;
 }
 
@@ -45,11 +45,12 @@ h1 {
 .content {
   flex-grow: 1;
   margin-top: 20px;
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+  .content {
     margin-top: 40px;
   }
 }
-
 .base-btn {
   border-radius: 50px;
   background: var(--primary-dark);

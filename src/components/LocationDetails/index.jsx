@@ -1,7 +1,15 @@
 import "./style.css";
 import { Link } from "react-router-dom";
-import closeCross from './img/close-cross.svg'
+import { useState, useEffect } from "react";
+import closeCross from "./img/close-cross.svg";
+
 const LocationDetails = ({ uv, location, date }) => {
+  const [isOpen, setIsOpen] = useState(true);
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  }, [uv]);
   const getTime = (min) => {
     let result = "";
     const hours = Math.floor(min / 60);
@@ -25,8 +33,19 @@ const LocationDetails = ({ uv, location, date }) => {
     return result;
   };
   return (
-    <div className="location-details">
-      <img src={closeCross} alt="close button" role="button" className="location-details__close" />
+    <div
+      className={
+        "location-details" + (isOpen ? "" : " location-details--hidden")
+      }
+    >
+      <img
+        src={closeCross}
+        alt="close button"
+        role="button"
+        className="location-details__close"
+        tabIndex={0}
+        onClick={() => setIsOpen(false)}
+      />
       <h2 className="location-details__title">{location.name}</h2>
       <div className="location-details__card">
         <div className="location-details__body">

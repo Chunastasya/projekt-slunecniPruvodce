@@ -1,12 +1,15 @@
 .map-content {
   display: flex;
   flex-grow: 1;
-  position: relative;
   gap: 40px;
 }
-
+@media (min-width: 768px) {
+  .map-content {
+    position: relative;
+  }
+}
 .map-content--details:after {
-  content: "";
+  content: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -15,6 +18,11 @@
   transform: translateX(50vw);
   background: var(--primary-dark);
   z-index: -1;
+}
+@media (min-width: 768px) {
+  .map-content--details:after {
+    content: "";
+  }
 }
 .map-content__main {
   flex-grow: 1;
