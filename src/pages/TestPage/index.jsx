@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import test from "/assets/texts/test.json";
 import { useState, useEffect } from "react";
 import Question from "../../components/Question";
@@ -9,6 +10,8 @@ export const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(test[0]);
   const [answers, setAnswers] = useState({});
   const [enableQuestions, setEnableQuestions] = useState([]);
+  const navigate = useNavigate();
+
   const findQuestion = (id) => {
     setCurrentQuestion(test.find((q) => q.id === id));
   };
@@ -20,6 +23,11 @@ export const TestPage = () => {
       }))
     );
   }, [answers]);
+
+  const handleResult = () => {
+    localStorage.setItem('answers', JSON.stringify(answers));
+    navigate("/test-result");
+  } 
 
   console.log(currentQuestion, answers);
   return (
@@ -34,6 +42,7 @@ export const TestPage = () => {
         goToQuestion={findQuestion}
         currentId={currentQuestion?.id}
       ></Navigation>
+      <button onClick={handleResult}>Vyhodnotit</button>
     </div>
   );
 };
