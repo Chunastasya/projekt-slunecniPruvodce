@@ -1,4 +1,15 @@
 
+.question__header {
+    text-align: center;
+}
+.answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    cursor: pointer;
+    
+}
+
 .answer {
 border-radius: 20px;
 background: var(--main, #854B39);
@@ -15,16 +26,6 @@ line-height: normal;
 display: flex;
 flex-direction: column;
 justify-content: center;
-/* padding: 16px; */
-
-}
-
-.answers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    cursor: pointer;
-    
 }
 
 .test_image {
