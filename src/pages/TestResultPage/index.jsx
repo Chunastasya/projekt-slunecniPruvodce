@@ -20,8 +20,9 @@ export const TestResultPage = () => {
     <h1>{result.name}</h1>
     <p className="test-result__text">{result.text}</p>
     <div className="buttons">
-    <button className="base-btn base-btn--left ">Opakovat Test</button>
-    <button className="base-btn base-btn--emphasis base-btn--right ">Číst víc</button>
+    <Link to="/test"
+             className="base-btn base-btn--left ">Opakovat Test</Link>
+    <Link className="base-btn base-btn--emphasis base-btn--right ">Číst víc</Link>
     </div>
     </div>
     <img className="test-result__image" src={result.image}></img>
