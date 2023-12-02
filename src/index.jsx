@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <TestPage />,
       },
       {
-        path: '/test-result/:id',
+        path: '/test-result/:score',
         element: <TestResultPage />,
       },
       {
