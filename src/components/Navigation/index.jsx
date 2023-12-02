@@ -38,7 +38,11 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
       {enableQuestions.map((q) => (
         <div
           key={q.id}
-          className={"circle" + (q.enabled ? "" : " circle--filled")}
+          className={
+            "circle" +
+            (q.enabled ? "" : " circle--filled") +
+            (currentId === q.id ? " circle--active" : "")
+          }
           onClick={() => goToQuestion(q.id)}
         ></div>
       ))}
