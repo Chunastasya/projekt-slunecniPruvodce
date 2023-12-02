@@ -9,6 +9,9 @@ export const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(test[1]);
   const [answers, setAnswers] = useState({});
   const [enableQuestions, setEnableQuestions] = useState([]);
+  const findQuestion = (id) => {
+    setCurrentQuestion(test.find((q) => q.id === id));
+  };
   useEffect(() => {
     setEnableQuestions(
       test.map((q) => ({
@@ -26,7 +29,10 @@ export const TestPage = () => {
         currentQuestion={currentQuestion}
         currentAnswer={answers[currentQuestion.id]}
       ></Question>
-      <Navigation></Navigation>
+      <Navigation
+        enableQuestions={enableQuestions}
+        goToQuestion={findQuestion}
+      ></Navigation>
     </div>
   );
 };
