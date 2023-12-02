@@ -23,7 +23,12 @@ export const TestPage = () => {
       }))
     );
     if (Object.keys(answers).length === test.length) {
-      navigate("/test-result/1");
+      let summ = 0;
+      const arr = Object.values(answers);
+      arr.forEach((cislo) => {
+        summ += cislo
+      })
+      navigate(`/test-result/${summ}`);
     }
   }, [answers]);
 

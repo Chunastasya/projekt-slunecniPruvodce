@@ -29,5 +29,5 @@ transform: rotate(180deg);
 }
 
 .circle--active {
-  border: #F5972A;
+  border: 2px solid  #F5972A;
 }
