@@ -7,6 +7,13 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
   return (
     <div className="question">
       <h1>{currentQuestion.question}</h1>
+      {currentQuestion.image ? (
+              <img
+                className="test_image question--image"
+                src={currentQuestion.image}
+                alt={currentQuestion.text}
+              ></img>
+            ) : null}
       <div className="answers">
         {currentQuestion.answers.map((answer) => (
           <div
