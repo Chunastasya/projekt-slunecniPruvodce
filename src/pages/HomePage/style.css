@@ -1,20 +1,12 @@
 
 
 .home-page_img {
-<<<<<<< HEAD
-    min-width: 100vw;
-    height: 832px;
-    margin: 0 calc(50% - 50vw - 9px);
-   
-   
-=======
   min-width: 100vw;
   height: 700px;
   object-fit: cover;
   display: block;
   flex-shrink: 0;
   margin: 0 calc(50% - 50vw - 9px);
->>>>>>> 690b89015a7a7979b5058596d1b74fa3470c0a83
 }
 
 
@@ -51,17 +43,10 @@
 }
 
 .homepage {
-<<<<<<< HEAD
    margin-top: -40px; 
 }
 
 
-=======
-}
-
-.homepage__section {
-}
->>>>>>> 690b89015a7a7979b5058596d1b74fa3470c0a83
 
 .homepage-text_section {
   max-width: 1100px;
