@@ -9,26 +9,30 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
     let begin = enableQuestions.slice(0, index);
     begin = begin.map((e, i) => begin[begin.length - i - 1]);
     const end = enableQuestions.slice(index + 1);
-    console.log(
-      enableQuestions,
-      begin,
-      end,
-      index,
-      begin.find((q) => q.enabled)?.id,
-      end.find((q) => q.enabled)?.id
-    );
-
     setArrowsData({
       prev: begin.find((q) => q.enabled)?.id,
       next: end.find((q) => q.enabled)?.id,
     });
   }, [enableQuestions, currentId]);
+  useEffect(() => {
+    if (!Object.keys(enableQuestions).length) {
+      return;
+    }
+    if (arrowsData.prev > -1 || arrowsData.next > -1) {
+      goToQuestion(arrowsData.next > -1 ? arrowsData.next : arrowsData.prev);
+    }
+  }, [enableQuestions]);
 
   return (
     <div className="circles">
       <div className="buttons">
         <button
-          className="base-btn base-btn--left base-btn--emphasis"
+          className={
+            "base-btn base-btn--left base-btn--emphasis" +
+            (arrowsData.prev || arrowsData.prev === 0
+              ? ""
+              : " base-btn--disabled")
+          }
           disabled={!(arrowsData.prev || arrowsData.prev === 0)}
           onClick={() => goToQuestion(arrowsData.prev)}
         >
@@ -48,7 +52,12 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
       ))}
       <div className="buttons">
         <button
-          className="base-btn base-btn--right base-btn--emphasis"
+          className={
+            "base-btn base-btn--right base-btn--emphasis" +
+            (arrowsData.next || arrowsData.next === 0
+              ? ""
+              : " base-btn--disabled")
+          }
           disabled={!(arrowsData.next || arrowsData.next === 0)}
           onClick={() => goToQuestion(arrowsData.next)}
         >

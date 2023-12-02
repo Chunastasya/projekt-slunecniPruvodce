@@ -22,12 +22,14 @@ export const TestPage = () => {
         enabled: !answers.hasOwnProperty(q.id),
       }))
     );
+    if (Object.keys(answers).length === test.length) {
+      navigate("/test-result/1");
+    }
   }, [answers]);
 
   const handleResult = () => {
-    localStorage.setItem('answers', JSON.stringify(answers));
-    navigate("/test-result");
-  } 
+    localStorage.setItem("answers", JSON.stringify(answers));
+  };
 
   console.log(currentQuestion, answers);
   return (
