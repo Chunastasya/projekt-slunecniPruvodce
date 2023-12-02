@@ -1,7 +1,8 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { memo } from "react";
 import node from "../../assets/texts/node.json";
+import __localPosition from "./mapHelper";
 import {
   ComposableMap,
   Geographies,
@@ -15,6 +16,7 @@ const geoUrl =
   "https://github.com/amcharts/amcharts4/blob/master/dist/geodata/es2015/json/region/world/europeUltra.json";
 
 const Map = ({ onSelectCoordinates }) => {
+  const map = useRef(null);
   const [zoomData, setZoomData] = useState({
     coordinates: [0, 0],
     zoom: 1,
@@ -42,6 +44,7 @@ const Map = ({ onSelectCoordinates }) => {
         geoY + cy / adjustScale,
       ];
       const c = projection.invert(clickCoordsInsideSvg);
+      console.log(-1, c);
       // 'unproject' the SVG coords to get lat and long
       handleCoordinates(c, geo, projection);
       setCoordinates(c);
@@ -50,46 +53,54 @@ const Map = ({ onSelectCoordinates }) => {
   const handleZoom = (geo) => {
     setZoomData(geo);
   };
+  const handler = (e) => {
+    const result = __localPosition(e, map);
+    console.log(result);
+  };
   return (
-    <ComposableMap
-      data-tip=""
-      width={400}
-      height={300}
-      projection="geoAzimuthalEqualArea"
-      className="map"
-      projectionConfig={{
-        rotate: [-20.0, -55.0, 0],
-        scale: 300,
-      }}
-    >
-      <ZoomableGroup zoom={1} center={[10.0, 50.0]} onMoveEnd={handleZoom}>
-        <Geographies geography={node}>
-          {({ geographies, projection }) =>
-            geographies.map((geo) => {
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  fill="#F6D6CB"
-                  stroke="#E5BC9B"
-                  strokeWidth="0.25px"
-                  onClick={onGeoEventFactory(
-                    onSelectCoordinates,
-                    geo,
-                    projection
-                  )}
-                />
-              );
-            })
-          }
-        </Geographies>
-        {coordinates.length ? (
-          <Marker coordinates={coordinates}>
-            <circle r={2} fill="#f5972a" />
-          </Marker>
-        ) : null}
-      </ZoomableGroup>
-    </ComposableMap>
+    <div>
+      <ComposableMap
+        data-tip=""
+        width={400}
+        height={300}
+        projection="geoAzimuthalEqualArea"
+        className="map"
+        ref={map}
+        onClick={handler}
+        projectionConfig={{
+          rotate: [-20.0, -55.0, 0],
+          scale: 300,
+        }}
+      >
+        <ZoomableGroup zoom={1} center={[10.0, 50.0]} onMoveEnd={handleZoom}>
+          <Geographies geography={node}>
+            {({ geographies, projection }) =>
+              geographies.map((geo) => {
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill="#F6D6CB"
+                    stroke="#E5BC9B"
+                    strokeWidth="0.25px"
+                    onClick={onGeoEventFactory(
+                      onSelectCoordinates,
+                      geo,
+                      projection
+                    )}
+                  />
+                );
+              })
+            }
+          </Geographies>
+          {coordinates.length ? (
+            <Marker coordinates={coordinates}>
+              <circle r={2} fill="#f5972a" />
+            </Marker>
+          ) : null}
+        </ZoomableGroup>
+      </ComposableMap>
+    </div>
   );
 };
 

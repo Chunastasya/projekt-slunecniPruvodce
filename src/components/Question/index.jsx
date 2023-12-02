@@ -6,7 +6,7 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
   };
   return (
     <div className="question">
-      <h1>{currentQuestion.question}</h1>
+      <h1 className="question__header">{currentQuestion.question}</h1>
       <div className="test_imageButtons">
       
       {currentQuestion.image ? (
