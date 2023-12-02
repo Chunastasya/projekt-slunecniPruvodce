@@ -37,7 +37,12 @@ h1 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
-  @media (min-width: 1416px) {
+  
+}
+
+@media (min-width: 1416px) {
+ 
+  .container {
     padding: 0;
   }
 }
