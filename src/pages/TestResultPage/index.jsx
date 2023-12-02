@@ -25,7 +25,7 @@ export const TestResultPage = () => {
               <Link to="/test" className="base-btn base-btn--left ">
                 Opakovat Test
               </Link>
-              <Link className="base-btn base-btn--emphasis base-btn--right ">
+              <Link to="/map" className="base-btn base-btn--emphasis base-btn--right ">
                 Zjistit aktuální UV Index
               </Link>
             </div>
