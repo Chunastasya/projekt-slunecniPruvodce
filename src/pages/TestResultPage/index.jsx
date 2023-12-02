@@ -1,3 +1,4 @@
+import "./style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import results from "/assets/texts/test_results.json";
@@ -13,5 +14,17 @@ export const TestResultPage = () => {
     setResult(results.find((r) => r.minValue <= score && r.maxValue >= score));
   }, []);
   console.log(result);
-  return <div className="test-result">Test Result</div>;
+  return <div className="test-result">{result ?(
+    <>
+    <div className="test-result__contant">
+    <h1>{result.name}</h1>
+    <p className="test-result__text">{result.text}</p>
+    <div className="buttons">
+    <button className="base-btn base-btn--left ">Opakovat Test</button>
+    <button className="base-btn base-btn--emphasis base-btn--right ">Číst víc</button>
+    </div>
+    </div>
+    <img className="test-result__image" src={result.image}></img>
+    </>
+  ) : null}</div>;
 };

@@ -1,0 +1,30 @@
+.test-result {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 50px;
+}
+
+.test-result__contant {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.test-result__text {
+flex-grow: 1;
+
+}
+
+.test-result__image {
+  
+
+    border-radius: 30px 200px 200px 200px;
+    max-height: 70vh;
+}
