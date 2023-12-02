@@ -24,6 +24,7 @@ pokožky? </h2>
         <section>
         <img className='home-page_img' src={Child}></img>
         <h2 className='h2-homepage'>Tipy pro ochranu pokožky vašeho dítěte</h2>
+        <Link to="test-result/-1">Zjistit</Link>
         </section>
         <section>
         <img className='home-page_img' src={Makeup}></img>
