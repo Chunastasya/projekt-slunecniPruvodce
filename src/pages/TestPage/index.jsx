@@ -3,6 +3,7 @@ import test from "/assets/texts/test.json";
 import { useState, useEffect } from "react";
 import Question from "../../components/Question";
 import "./style.css";
+import Navigation from "../../components/Navigation";
 
 export const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(test[1]);
@@ -25,6 +26,7 @@ export const TestPage = () => {
         currentQuestion={currentQuestion}
         currentAnswer={answers[currentQuestion.id]}
       ></Question>
+      <Navigation></Navigation>
     </div>
   );
 };
