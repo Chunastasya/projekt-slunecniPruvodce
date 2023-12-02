@@ -44,7 +44,6 @@ export const TestPage = () => {
         goToQuestion={findQuestion}
         currentId={currentQuestion?.id}
       ></Navigation>
-      <button onClick={handleResult}>Vyhodnotit</button>
     </div>
   );
 };

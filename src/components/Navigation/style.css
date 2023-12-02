@@ -27,3 +27,7 @@ transform: rotate(180deg);
 .circle--filled {
   background-color: #E5BC9B;
 }
+
+.circle--active {
+  border: #F5972A;
+}
