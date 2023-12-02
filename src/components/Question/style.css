@@ -50,3 +50,18 @@ height: 550px;
 flex-shrink: 0;
 border-radius: 30px 200px 200px 200px;
 }
+
+
+.test_imageButtons {
+display: flex;
+justify-content: start;
+align-items: flex-start;
+gap: 60px;
+
+
+}
+
+.answers {
+    align-items: center;
+}
+

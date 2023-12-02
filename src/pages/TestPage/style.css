@@ -1,18 +1,4 @@
-.circles {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 35px;
-    padding-top: 130px;
-    gap: 3px;
-}
 
-.circle {
-background: #FFFFFF;
-  border: 0.1875em solid #E5BC9B;
-  border-radius: 50%;
-  height: 16px;
-  width: 16px; 
-}
 
 
 
