@@ -7,6 +7,8 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
   return (
     <div className="question">
       <h1>{currentQuestion.question}</h1>
+      <div className="test_imageButtons">
+      
       {currentQuestion.image ? (
               <img
                 className="test_image question--image"
@@ -14,6 +16,7 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
                 alt={currentQuestion.text}
               ></img>
             ) : null}
+            
       <div className="answers">
         {currentQuestion.answers.map((answer) => (
           <div
@@ -36,7 +39,10 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
           </div>
         ))}
       </div>
+      
+      </div>
     </div>
+
   );
 };
 
