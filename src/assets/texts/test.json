@@ -57,22 +57,22 @@
       {
         "value": 1,
         "text": "Blond",
-        "image": "/img/test/q2/v2.jpg"
+        "image": "/img/test/q2/v1.jpg"
       },
       {
         "value": 2,
         "text": "Kasťanová, tmavě blond",
-        "image": "/img/test/q2/v3.jpg"
+        "image": "/img/test/q2/v2.jpg"
       },
       {
         "value": 3,
         "text": "Tmavě hnědá",
-        "image": "/img/test/q2/v4.jpg"
+        "image": "/img/test/q2/v3.jpg"
       },
       {
         "value": 4,
         "text": "Černá",
-        "image": "/img/test/q2/v5.jpg"
+        "image": "/img/test/q2/v4.jpg"
       }
     ]
   },

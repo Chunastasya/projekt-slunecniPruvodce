@@ -32,6 +32,7 @@ export const TestPage = () => {
       <Navigation
         enableQuestions={enableQuestions}
         goToQuestion={findQuestion}
+        currentId={currentQuestion?.id}
       ></Navigation>
     </div>
   );
