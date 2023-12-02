@@ -22,3 +22,7 @@ transform: rotate(180deg);
 .buttons {
   margin: 13px;
 }
+
+.circle--filled {
+  background-color: #E5BC9B;
+}

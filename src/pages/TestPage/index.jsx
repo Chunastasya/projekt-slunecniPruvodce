@@ -6,7 +6,7 @@ import "./style.css";
 import Navigation from "../../components/Navigation";
 
 export const TestPage = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(test[1]);
+  const [currentQuestion, setCurrentQuestion] = useState(test[0]);
   const [answers, setAnswers] = useState({});
   const [enableQuestions, setEnableQuestions] = useState([]);
   const findQuestion = (id) => {
