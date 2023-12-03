@@ -15,7 +15,19 @@ export const TestResultPage = () => {
   }, []);
   return (
     <div className="test-result">
-      <h1 className="test-result__header">{result?.name || "Výsledek nenalezen"}</h1>
+      <div className="test-result__header">
+        <h1 className="test-result__title">
+          {result?.name || "Výsledek nenalezen"}
+        </h1>
+        {result?.SPF ? (
+          <div className="test-result__spf">
+            Doporučené SPF
+            <span className=" base-btn base-btn--right test-result__spf--count">
+              {result.SPF}
+            </span>
+          </div>
+        ) : null}
+      </div>
       <p className="test-result__text">
         {result?.text ||
           "Bohužel nemáme žádné výsledky Vašeho testu. Doporučujeme opakovat test."}
