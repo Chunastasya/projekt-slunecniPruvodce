@@ -35,8 +35,6 @@ export const TestPage = () => {
   const handleResult = () => {
     localStorage.setItem("answers", JSON.stringify(answers));
   };
-
-  console.log(answers);
   return (
     <div className="test">
       <Question

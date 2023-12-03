@@ -80,7 +80,7 @@ h1 {
   color: var(--primary-dark);
 }
 .base-btn--emphasis:hover {
-  color: var(--primary-light);
+  color: white;
 }
 .base-btn--left {
   border-radius: 10px 50px 50px 50px;

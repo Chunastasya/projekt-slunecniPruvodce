@@ -13,25 +13,34 @@ export const TestResultPage = () => {
     setAnswers(JSON.parse(localStorage.getItem("answers")));
     setResult(results.find((r) => r.minValue <= score && r.maxValue >= score));
   }, []);
-  console.log(result);
   return (
     <div className="test-result">
-      {result ? (
-        <>
-          <div className="test-result__contant">
+      <div className="test-result__content">
+        {result ? (
+          <>
             <h1>{result.name}</h1>
             <p className="test-result__text">{result.text}</p>
-            <div className="buttons">
-              <Link to="/test" className="base-btn base-btn--left ">
-                Opakovat Test
-              </Link>
-              <Link to="/map" className="base-btn base-btn--emphasis base-btn--right ">
-                Zjistit aktuální UV Index
-              </Link>
-            </div>
-          </div>
-          <img className="test-result__image" src={result.image}></img>
-        </>
+          </>
+        ) : (
+          <p className="test-result__text">
+            Bohužel nemáme žádné výsledky Vašeho testu. Doporučujeme opakovat
+            test.
+          </p>
+        )}
+        <div className="buttons">
+          <Link to="/test" className="base-btn base-btn--left ">
+            Opakovat Test
+          </Link>
+          <Link
+            to="/map"
+            className="base-btn base-btn--emphasis base-btn--right "
+          >
+            Zjistit aktuální UV Index
+          </Link>
+        </div>
+      </div>
+      {result?.image ? (
+        <img className="test-result__image" src={result.image}></img>
       ) : null}
     </div>
   );
