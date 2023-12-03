@@ -53,6 +53,8 @@ h1 {
 .content {
   flex-grow: 1;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .content {

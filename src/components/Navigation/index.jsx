@@ -26,7 +26,7 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
 
   return (
     <div className="circles">
-      <div className="buttons">
+      <div className="nav-button nav-button--prev">
         <button
           className={
             "base-btn base-btn--left base-btn--emphasis" +
@@ -55,7 +55,7 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
           onClick={() => goToQuestion(q.id)}
         ></button>
       ))}
-      <div className="buttons">
+      <div className="nav-button nav-button--next">
         <button
           className={
             "base-btn base-btn--right base-btn--emphasis" +

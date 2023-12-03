@@ -1,33 +1,46 @@
 .circles {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 35px;
-    padding-top: 130px;
-    align-items: center;
-    gap: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
 }
 
 .circle {
-background: #FFFFFF;
-  border: 0.1875em solid #E5BC9B;
+  background: #ffffff;
+  border: 2px solid #e5bc9b;
   border-radius: 50%;
   height: 20px;
-  width: 20px; 
+  width: 20px;
+  flex-shrink: 0;
   cursor: pointer;
+  order: 2;
 }
-
+@media (min-width: 768px) {
+  .circle {
+    order: 0;
+  }
+}
+.nav-button {
+  width: calc(50% - 4px);
+  display: flex;
+}
+@media (min-width: 768px) {
+  .nav-button {
+    width: auto;
+  }
+}
+.nav-button--prev {
+  justify-content: end;
+}
 .image-arrow {
-transform: rotate(180deg);
-}
-
-.buttons {
-  margin: 13px;
+  transform: rotate(180deg);
 }
 
 .circle--filled {
-  background-color: #E5BC9B;
+  background-color: #e5bc9b;
 }
 
 .circle--active {
-  border: 2px solid  #F5972A;
+  border: 2px solid #f5972a;
 }

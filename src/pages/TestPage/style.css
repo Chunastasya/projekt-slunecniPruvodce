@@ -1,4 +1,7 @@
-
-
-
-
+.test {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
