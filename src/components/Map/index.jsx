@@ -35,8 +35,8 @@ const Map = ({ onSelectCoordinates }) => {
       const svg = evt.nativeEvent.srcElement.viewportElement;
 
       //adjust for SVG width on the page / internal rendering width
-      const adjustScale =
-        zoomData.zoom * (svg.clientWidth / svg.viewBox.baseVal.width);
+      const { width, height } = map.current.getBoundingClientRect();
+      const adjustScale = zoomData.zoom * Math.min(width / 400, height / 300);
 
       // these are the coords in SVG coordinate system
       const clickCoordsInsideSvg = [
@@ -44,7 +44,6 @@ const Map = ({ onSelectCoordinates }) => {
         geoY + cy / adjustScale,
       ];
       const c = projection.invert(clickCoordsInsideSvg);
-      console.log(-1, c);
       // 'unproject' the SVG coords to get lat and long
       handleCoordinates(c, geo, projection);
       setCoordinates(c);
@@ -54,6 +53,7 @@ const Map = ({ onSelectCoordinates }) => {
     setZoomData(geo);
   };
   const handler = (e) => {
+    console.log("event", e);
     const result = __localPosition(e, map);
     console.log(result);
   };
