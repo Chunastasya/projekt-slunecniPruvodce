@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import Map from "../../components/Map";
 import LocationDetails from "../../components/LocationDetails";
 import Loader from "../../components/Loader";
+import cities from "/assets/texts/cities.json";
+import CitiesList from "../../components/CitiesList";
+
 const MapPage = () => {
   const [dataUV, setDataUV] = useState(null);
+  const [activeCity, setActiveCity] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [skinType, setSkinType] = useState(null);
   const [coordinates, setCoordinates] = useState([]);
@@ -18,6 +22,12 @@ const MapPage = () => {
       setSkinType(type);
     }
   }, []);
+  useEffect(() => {
+    if (!activeCity) {
+      return;
+    }
+    chooseLocation(activeCity.coordinates, { properties: activeCity });
+  }, [activeCity]);
   useEffect(() => {
     const getUVIndex = async () => {
       if (!(coordinates && coordinates.length > 1)) {
@@ -62,7 +72,7 @@ const MapPage = () => {
       {isLoading ? <Loader /> : null}
       <div
         className={
-          dataUV && dataUV.uv && dataUV.location
+          (dataUV && dataUV.uv && dataUV.location) || cities || cities.length
             ? "map-content map-content--details"
             : "map-content"
         }
@@ -81,13 +91,25 @@ const MapPage = () => {
               />
             </label>
           </div>
-          <Map onSelectCoordinates={chooseLocation} />
+          <Map
+            onSelectCoordinates={chooseLocation}
+            cities={cities}
+            activeCity={activeCity}
+            selectCity={setActiveCity}
+          />
         </div>
         {dataUV && dataUV.uv && dataUV.location ? (
           <div className="map-content__overlay">
             <LocationDetails {...dataUV} date={date} skinType={skinType} />
           </div>
-        ) : null}
+        ) : (
+          <CitiesList
+            onSelectCoordinates={chooseLocation}
+            cities={cities}
+            activeCity={activeCity}
+            selectCity={setActiveCity}
+          />
+        )}
       </div>
     </>
   );

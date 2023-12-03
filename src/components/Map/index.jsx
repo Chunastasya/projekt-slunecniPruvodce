@@ -1,5 +1,5 @@
 import "./style.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { memo } from "react";
 import node from "/assets/texts/node.json";
 import {
@@ -10,24 +10,17 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoPath } from "d3-geo";
-import cities from "/assets/texts/cities.json";
+
 const geoUrl =
   "https://github.com/amcharts/amcharts4/blob/master/dist/geodata/es2015/json/region/world/europeUltra.json";
 
-const Map = ({ onSelectCoordinates }) => {
+const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
   const map = useRef(null);
-  const [activeCity, setActiveCity] = useState(null);
   const [zoomData, setZoomData] = useState({
     coordinates: [0, 0],
     zoom: 1,
   });
   const [coordinates, setCoordinates] = useState([]);
-  useEffect(() => {
-    if (!activeCity) {
-      return;
-    }
-    onSelectCoordinates(activeCity.coordinates, { properties: activeCity });
-  }, [activeCity]);
   const onGeoEventFactory = (handleCoordinates, geo, projection) => {
     const gPath = geoPath().projection(projection);
 
@@ -104,7 +97,7 @@ const Map = ({ onSelectCoordinates }) => {
                 <Marker
                   key={city.id}
                   coordinates={city.coordinates}
-                  onClick={() => setActiveCity(city)}
+                  onClick={() => selectCity(city)}
                 >
                   <circle
                     r={2}
