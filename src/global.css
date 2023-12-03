@@ -52,13 +52,13 @@ h1 {
 
 .content {
   flex-grow: 1;
-  margin-top: 20px;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 768px) {
   .content {
-    margin-top: 40px;
+    margin: 40px 0;
   }
 }
 .base-btn {
