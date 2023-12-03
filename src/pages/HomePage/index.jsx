@@ -28,9 +28,7 @@ pokožky? </h2>
         <Link className='base-btn base-btn--right btn--homepage ' to="test-result/-1">Zjistit</Link>
         </div>
         </section>
-        <section>
-        <img className='home-page_img' src={Makeup}></img>
-        </section>
+      
         <section>
         <img className='home-page_img' src={Map}></img>
         </section>
