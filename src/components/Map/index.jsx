@@ -1,7 +1,7 @@
 import "./style.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { memo } from "react";
-import node from "../../assets/texts/node.json";
+import node from "/assets/texts/node.json";
 import {
   ComposableMap,
   Geographies,
@@ -10,17 +10,24 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoPath } from "d3-geo";
-
+import cities from "/assets/texts/cities.json";
 const geoUrl =
   "https://github.com/amcharts/amcharts4/blob/master/dist/geodata/es2015/json/region/world/europeUltra.json";
 
 const Map = ({ onSelectCoordinates }) => {
   const map = useRef(null);
+  const [activeCity, setActiveCity] = useState(null);
   const [zoomData, setZoomData] = useState({
     coordinates: [0, 0],
     zoom: 1,
   });
   const [coordinates, setCoordinates] = useState([]);
+  useEffect(() => {
+    if (!activeCity) {
+      return;
+    }
+    onSelectCoordinates(activeCity.coordinates, { properties: activeCity });
+  }, [activeCity]);
   const onGeoEventFactory = (handleCoordinates, geo, projection) => {
     const gPath = geoPath().projection(projection);
 
@@ -46,6 +53,7 @@ const Map = ({ onSelectCoordinates }) => {
       // 'unproject' the SVG coords to get lat and long
       handleCoordinates(c, geo, projection);
       setCoordinates(c);
+      setActiveCity(null);
     };
   };
   const handleZoom = (geo) => {
@@ -91,6 +99,20 @@ const Map = ({ onSelectCoordinates }) => {
               <circle r={2} fill="#f5972a" />
             </Marker>
           ) : null}
+          {Array.isArray(cities)
+            ? cities.map((city) => (
+                <Marker
+                  key={city.id}
+                  coordinates={city.coordinates}
+                  onClick={() => setActiveCity(city)}
+                >
+                  <circle
+                    r={2}
+                    fill={activeCity?.id === city.id ? "#f5972a" : "#854b39"}
+                  />
+                </Marker>
+              ))
+            : null}
         </ZoomableGroup>
       </ComposableMap>
     </div>

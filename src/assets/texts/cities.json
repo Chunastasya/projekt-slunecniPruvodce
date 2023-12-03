@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Barcelona",
+    "coordinates": [2.1734, 41.3851]
+  },
+  {
+    "id": 2,
+    "name": "Lisabon",
+    "coordinates": [-9.1393, 38.7223]
+  },
+  {
+    "id": 3,
+    "name": "Rím",
+    "coordinates": [12.4964, 41.9028]
+  },
+  {
+    "id": 4,
+    "name": "Atény",
+    "coordinates": [23.7275, 37.9838]
+  },
+  {
+    "id": 5,
+    "name": "Nizza",
+    "coordinates": [7.262, 43.7102]
+  },
+  {
+    "id": 6,
+    "name": "Dubrovník",
+    "coordinates": [18.0944, 42.6507]
+  },
+  {
+    "id": 7,
+    "name": "Split",
+    "coordinates": [16.4402, 43.5081]
+  },
+  {
+    "id": 8,
+    "name": "Budapešť",
+    "coordinates": [19.0402, 47.4979]
+  },
+  {
+    "id": 9,
+    "name": "Cannes",
+    "coordinates": [7.0174, 43.5528]
+  },
+  {
+    "id": 10,
+    "name": "Lanzarote",
+    "coordinates": [-13.5899, 29.0469]
+  },
+  {
+    "id": 11,
+    "name": "Santa Margherita Ligure",
+    "coordinates": [9.2109, 44.3314]
+  },
+  {
+    "id": 12,
+    "name": "Mykonos",
+    "coordinates": [25.3289, 37.4467]
+  },
+  {
+    "id": 13,
+    "name": "Korfu",
+    "coordinates": [19.9216, 39.6243]
+  },
+  {
+    "id": 14,
+    "name": "Algarve",
+    "coordinates": [-7.9304, 37.0179]
+  },
+  {
+    "id": 15,
+    "name": "Dublin",
+    "coordinates": [-6.2603, 53.3498]
+  }
+]
