@@ -2,7 +2,6 @@ import "./style.css";
 import { useState, useRef } from "react";
 import { memo } from "react";
 import node from "../../assets/texts/node.json";
-import __localPosition from "./mapHelper";
 import {
   ComposableMap,
   Geographies,
@@ -52,11 +51,6 @@ const Map = ({ onSelectCoordinates }) => {
   const handleZoom = (geo) => {
     setZoomData(geo);
   };
-  const handler = (e) => {
-    console.log("event", e);
-    const result = __localPosition(e, map);
-    console.log(result);
-  };
   return (
     <div>
       <ComposableMap
@@ -66,7 +60,6 @@ const Map = ({ onSelectCoordinates }) => {
         projection="geoAzimuthalEqualArea"
         className="map"
         ref={map}
-        onClick={handler}
         projectionConfig={{
           rotate: [-20.0, -55.0, 0],
           scale: 300,

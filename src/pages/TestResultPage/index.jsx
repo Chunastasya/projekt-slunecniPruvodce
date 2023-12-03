@@ -11,7 +11,11 @@ export const TestResultPage = () => {
 
   useEffect(() => {
     setAnswers(JSON.parse(localStorage.getItem("answers")));
-    setResult(results.find((r) => r.minValue <= score && r.maxValue >= score));
+    const result = results.find((r) => r.minValue <= score && r.maxValue >= score);
+    setResult(result);
+    if (result) {
+      localStorage.setItem("skin-type", result.id);
+    }
   }, []);
   return (
     <div className="test-result">

@@ -6,11 +6,18 @@ import Loader from "../../components/Loader";
 const MapPage = () => {
   const [dataUV, setDataUV] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [skinType, setSkinType] = useState(null);
   const [coordinates, setCoordinates] = useState([]);
   const [date, setDate] = useState("");
   const [initialDate, setInitialDate] = useState(
     new Date().toISOString().split(".")[0]
   );
+  useEffect(() => {
+    const type = localStorage.getItem("skin-type");
+    if (type > -1) {
+      setSkinType(type);
+    }
+  }, []);
   useEffect(() => {
     const getUVIndex = async () => {
       if (!(coordinates && coordinates.length > 1)) {
@@ -73,7 +80,7 @@ const MapPage = () => {
           <Map onSelectCoordinates={chooseLocation} />
         </div>
         {dataUV && dataUV.uv && dataUV.location ? (
-          <LocationDetails {...dataUV} date={date} />
+          <LocationDetails {...dataUV} date={date} skinType={skinType} />
         ) : null}
       </div>
     </>
