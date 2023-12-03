@@ -37,7 +37,7 @@
 }
 .test-result__header {
   grid-area: header;
-  margin: auto;
+  margin: auto 0;
 }
 .test-result__buttons {
   grid-area: buttons;
