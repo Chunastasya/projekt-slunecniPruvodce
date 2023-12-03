@@ -31,7 +31,7 @@ pokožky? </h2>
       
         <section className='section-map'>
         <img className='home-page_img' src={Map}></img>
-        <p className='home-page-Pmap'>Mapa UV Indexu</p>
+        <Link to="/map" className='home-page-Pmap'>Mapa UV Indexu</Link>
         </section>
       </main>
       
