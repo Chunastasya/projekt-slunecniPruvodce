@@ -29,8 +29,9 @@ pokožky? </h2>
         </div>
         </section>
       
-        <section>
+        <section className='section-map'>
         <img className='home-page_img' src={Map}></img>
+        <p className='home-page-Pmap'>Mapa UV Indexu</p>
         </section>
       </main>
       

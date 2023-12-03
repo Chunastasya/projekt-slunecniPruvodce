@@ -60,3 +60,28 @@
 }
 
 
+.section-map {
+    position: relative;
+}
+
+
+.home-page-Pmap {
+    position: absolute;
+   top: -65px;
+    right: 16px;
+    color: var(--main, #854B39);
+    font-family: Girassol;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 450px) {
+    .home-page-Pmap {
+        font-size: 35px;
+        top: -30px;
+        left: -10px;
+    }}
+
+

@@ -4,3 +4,12 @@
   text-align: center;
   padding: 16px;
 }
+
+@media (max-width: 450px) {
+  .footer {
+    font-size: 12px;
+    font-weight: 200;
+    padding: 25px;
+    margin-top: 8px;
+  }
+}
