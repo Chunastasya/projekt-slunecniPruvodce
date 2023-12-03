@@ -61,7 +61,11 @@ const MapPage = () => {
     <>
       {isLoading ? <Loader /> : null}
       <div
-        className={dataUV ? "map-content map-content--details" : "map-content"}
+        className={
+          dataUV && dataUV.uv && dataUV.location
+            ? "map-content map-content--details"
+            : "map-content"
+        }
       >
         <div className="map-content__main">
           <div className="map-content__header">
@@ -80,7 +84,9 @@ const MapPage = () => {
           <Map onSelectCoordinates={chooseLocation} />
         </div>
         {dataUV && dataUV.uv && dataUV.location ? (
-          <LocationDetails {...dataUV} date={date} skinType={skinType} />
+          <div className="map-content__overlay">
+            <LocationDetails {...dataUV} date={date} skinType={skinType} />
+          </div>
         ) : null}
       </div>
     </>
