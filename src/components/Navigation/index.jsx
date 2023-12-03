@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
   const [arrowsData, setArrowsData] = useState({});
-  console.log(currentId);
   useEffect(() => {
     const index = enableQuestions.findIndex((q) => q.id === currentId);
     let begin = enableQuestions.slice(0, index);

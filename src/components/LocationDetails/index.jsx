@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import closeCross from "./img/close-cross.svg";
 
-const LocationDetails = ({ uv, location, date }) => {
+const LocationDetails = ({ uv, location, date, skinType }) => {
   const [isOpen, setIsOpen] = useState(true);
   useEffect(() => {
     if (!isOpen) {
@@ -67,7 +67,13 @@ const LocationDetails = ({ uv, location, date }) => {
                 <ul className="location-details__list">
                   {Object.values(uv.safe_exposure_time || []).map(
                     (value, i) => (
-                      <li className="uv-item" key={i}>
+                      <li
+                        className={
+                          "uv-item" +
+                          (((skinType && Number(skinType) === i + 1) || (skinType === "0" && i === 0)) ? ' ui-item--active' : '')
+                        }
+                        key={i}
+                      >
                         <div className="uv-item__title">Typ {i + 1}</div>
                         <div className="uv-item__text">{getTime(value)}</div>
                       </li>

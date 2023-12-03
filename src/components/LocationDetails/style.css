@@ -92,7 +92,9 @@
   margin-bottom: 8px;
   gap: 8px;
 }
-
+.ui-item--active {
+  background: var(--primary-light);
+}
 .uv-item__title {
   width: 76px;
 }
