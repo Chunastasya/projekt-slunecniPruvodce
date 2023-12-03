@@ -7,10 +7,10 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
   return (
     <div className="question">
       <h1 className="question__header">{currentQuestion.question}</h1>
-      <div className="test_imageButtons">
+      <div className="question__content">
         {currentQuestion.image ? (
           <img
-            className="test_image question--image"
+            className="test_image question__image"
             src={currentQuestion.image}
             alt={currentQuestion.text}
           ></img>
