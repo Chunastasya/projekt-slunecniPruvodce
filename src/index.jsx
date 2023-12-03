@@ -7,6 +7,7 @@ import { ErrorPage } from './pages/ErrorPage';
 import { TestPage } from './pages/TestPage';
 import { TestResultPage } from './pages/TestResultPage';
 import MapPage from './pages/MapPage';
+import RecommendationPage from './pages/RecommendationPage';
 import './global.css';
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/map',
         element: <MapPage />,
+      },
+      {
+        path: '/recommendation',
+        element: <RecommendationPage />,
       },
       {
         path: '*',

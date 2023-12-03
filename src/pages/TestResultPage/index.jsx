@@ -21,10 +21,11 @@ export const TestResultPage = () => {
         </h1>
         {result?.SPF ? (
           <div className="test-result__spf">
-            Doporučené SPF
+             SPF
             <span className=" base-btn base-btn--right test-result__spf--count">
               {result.SPF}
             </span>
+            <Link to="/recommendation" className='base-btn'>Zjistit více</Link>
           </div>
         ) : null}
       </div>

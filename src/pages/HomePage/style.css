@@ -80,9 +80,34 @@
 
 @media (max-width: 450px) {
     .home-page-Pmap {
-        font-size: 35px;
+        font-size: 30px;
         top: -3px;
         left: -10px;
     }}
+
+
+    .section-makeup {
+        position: relative;
+    }
+
+    .home-page-Precommendation {
+        color: var(--main, #854B39);
+        font-family: Girassol;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none; 
+        position: absolute;
+        top: -10px;
+        text-decoration: none;
+    }
+
+    @media (max-width: 450px) {
+        .home-page-Precommendation {
+            font-size: 30px;
+            top: -3px;
+            left: -10px;
+        }}
 
 

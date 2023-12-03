@@ -28,6 +28,10 @@ pokožky? </h2>
         <Link className='base-btn base-btn--right btn--homepage ' to="test-result/-1">Zjistit</Link>
         </div>
         </section>
+        <section className='section-makeup'>
+        <img className='home-page_img' src={Makeup}></img>
+        <Link to="/recommendation" className='home-page-Precommendation'>hlavní typy produktů <br/>pro ochranu před <br/>sluncem</Link>
+        </section>
       
         <section className='section-map'>
         <img className='home-page_img' src={Map}></img>
