@@ -38,6 +38,26 @@
 .test-result__header {
   grid-area: header;
   margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.test-result__title {
+  margin: 0;
+}
+.test-result__spf {
+  font-family: Girassol, serif;
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.test-result__spf--count.base-btn {
+  background: white;
+  border: 2px solid var(--emphasis);
+  color: var(--primary-dark);
 }
 .test-result__buttons {
   grid-area: buttons;
