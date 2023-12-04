@@ -46,7 +46,6 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
       // 'unproject' the SVG coords to get lat and long
       handleCoordinates(c, geo, projection);
       setCoordinates(c);
-      setActiveCity(null);
     };
   };
   const handleZoom = (geo) => {

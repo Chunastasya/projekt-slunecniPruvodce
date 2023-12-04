@@ -2,11 +2,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const CitiesList = ({
-  cities,
-  activeCity,
-  selectCity,
-}) => {
+const CitiesList = ({ cities, activeCity, selectCity }) => {
   return (
     <div className="location-details location-details--hidden">
       <h2 className="location-details__title">Města</h2>
@@ -14,7 +10,11 @@ const CitiesList = ({
         <div className="location-details__body">
           <ul className="cities">
             {cities.map((city) => (
-              <li className="city" onClick={() => selectCity(city)}>
+              <li
+                className="city"
+                key={city.id}
+                onClick={() => selectCity(city)}
+              >
                 {city.name}
               </li>
             ))}

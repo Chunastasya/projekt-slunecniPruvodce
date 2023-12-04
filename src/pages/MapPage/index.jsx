@@ -66,6 +66,9 @@ const MapPage = () => {
       ...(dataUV || {}),
       location: geo.properties,
     });
+    if (projection) {
+      setActiveCity(null);
+    }
   };
   return (
     <>
