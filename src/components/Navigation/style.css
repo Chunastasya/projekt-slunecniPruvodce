@@ -38,9 +38,9 @@
 }
 
 .circle--filled {
-  background-color: #e5bc9b;
+  background-color: var(--primary-light);
 }
 
 .circle--active {
-  border: 2px solid #f5972a;
+  background-color: var(--emphasis);
 }

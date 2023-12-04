@@ -29,14 +29,10 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
         <button
           className={
             "base-btn base-btn--left base-btn--emphasis" +
-            (currentId !== 0 && (arrowsData.prev || arrowsData.prev === 0)
-              ? ""
-              : " base-btn--disabled")
+            (currentId !== 0 ? "" : " base-btn--disabled")
           }
-          disabled={
-            currentId === 0 || !(arrowsData.prev || arrowsData.prev === 0)
-          }
-          onClick={() => goToQuestion(arrowsData.prev)}
+          disabled={currentId === 0}
+          onClick={() => goToQuestion(currentId - 1)}
         >
           <img className="image-arrow" src={Arrow}></img>
         </button>
@@ -58,14 +54,12 @@ const Navigation = ({ enableQuestions, goToQuestion, currentId }) => {
         <button
           className={
             "base-btn base-btn--right base-btn--emphasis" +
-            (currentId !== 0 && (arrowsData.next || arrowsData.next === 0)
+            (currentId !== 0 && currentId !== enableQuestions.length + 1
               ? ""
               : " base-btn--disabled")
           }
-          disabled={
-            currentId === 0 || !(arrowsData.next || arrowsData.next === 0)
-          }
-          onClick={() => goToQuestion(arrowsData.next)}
+          disabled={currentId === 0 || currentId === enableQuestions.length + 1}
+          onClick={() => goToQuestion(currentId + 1)}
         >
           <img src={Arrow}></img>
         </button>
