@@ -49,7 +49,7 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
       <h2 className="location-details__title">{location.name}</h2>
       <div className="location-details__card">
         <div className="location-details__body">
-          {uv.sun_info.sun_position.altitude > 0 ? (
+          {uv?.sun_info?.sun_position?.altitude > 0 ? (
             <>
               <div className="location-details__section">
                 <div className="location-details__subtitle">
@@ -70,7 +70,10 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
                       <li
                         className={
                           "uv-item" +
-                          (((skinType && Number(skinType) === i + 1) || (skinType === "0" && i === 0)) ? ' ui-item--active' : '')
+                          ((skinType && Number(skinType) === i + 1) ||
+                          (skinType === "0" && i === 0)
+                            ? " ui-item--active"
+                            : "")
                         }
                         key={i}
                       >
@@ -84,14 +87,15 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
             </>
           ) : (
             <div className="location-details__section">
-              V současné době je nízký UV index kvůli tmavé době. To znamená, že
-              se můžete bezpečně pohybovat venku bez další ochrany. Užijte si
-              večerní procházku!
+              {uv?.error ||
+                "V současné době je nízký UV index kvůli tmavé době. To znamená, že se můžete bezpečně pohybovat venku bez další ochrany. Užijte si večerní procházku!"}
             </div>
           )}
         </div>
         <div className="location-details__footer">
-          <div className="location-details__subtitle">Nevíte svůj typ?</div>
+          <div className="location-details__subtitle">
+            Nevíte svůj typ pokožky?
+          </div>
           <Link
             to="/test"
             className="base-btn base-btn--right location-details__btn--test"

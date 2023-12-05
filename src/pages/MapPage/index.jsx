@@ -54,6 +54,13 @@ const MapPage = () => {
           uv: data.result,
         });
       } catch (error) {
+        setDataUV({
+          ...(dataUV || {}),
+          uv: {
+            error:
+              "Litujeme, ale maximální počet dotazů na API pro dnešek byl dosažen. Prosím, počkejte až do zítřka pro další dotazy.",
+          },
+        });
         console.log("error", error);
       }
       setIsLoading(false);
