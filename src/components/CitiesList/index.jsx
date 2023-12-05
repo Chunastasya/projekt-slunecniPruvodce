@@ -1,8 +1,6 @@
 import "./style.css";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 
-const CitiesList = ({ cities, activeCity, selectCity }) => {
+const CitiesList = ({ cities, selectCity }) => {
   return (
     <div className="location-details location-details--hidden">
       <h2 className="location-details__title">Města</h2>
@@ -12,7 +10,12 @@ const CitiesList = ({ cities, activeCity, selectCity }) => {
             {cities.map((city) => (
               <li
                 className="city"
+                role="button"
+                tabIndex={0}
                 key={city.id}
+                onKeyUp={(e) =>
+                  (e.key === "Enter" || e.code == "Space") && selectCity(city)
+                }
                 onClick={() => selectCity(city)}
               >
                 {city.name}

@@ -21,6 +21,15 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
     zoom: 1,
   });
   const [coordinates, setCoordinates] = useState([]);
+  const MAX_WIDTH = 400;
+  const MAX_HEIGHT = 300;
+  const PROJECTION_CONFIG = {
+    rotate: [-20.0, -55.0, 0],
+    scale: 300,
+  };
+  const MARKER_RADIUS = 2;
+  const COLOR_EMPHASIS = "#f5972a";
+  const COLOR_DARK = "#854b39";
   const onGeoEventFactory = (handleCoordinates, geo, projection) => {
     const gPath = geoPath().projection(projection);
 
@@ -35,7 +44,8 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
 
       //adjust for SVG width on the page / internal rendering width
       const { width, height } = map.current.getBoundingClientRect();
-      const adjustScale = zoomData.zoom * Math.min(width / 400, height / 300);
+      const adjustScale =
+        zoomData.zoom * Math.min(width / MAX_WIDTH, height / MAX_HEIGHT);
 
       // these are the coords in SVG coordinate system
       const clickCoordsInsideSvg = [
@@ -55,15 +65,12 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
     <div>
       <ComposableMap
         data-tip=""
-        width={400}
-        height={300}
+        width={MAX_WIDTH}
+        height={MAX_HEIGHT}
         projection="geoAzimuthalEqualArea"
         className="map"
         ref={map}
-        projectionConfig={{
-          rotate: [-20.0, -55.0, 0],
-          scale: 300,
-        }}
+        projectionConfig={PROJECTION_CONFIG}
       >
         <ZoomableGroup zoom={1} center={[10.0, 50.0]} onMoveEnd={handleZoom}>
           <Geographies geography={node}>
@@ -76,6 +83,7 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
                     fill="#F6D6CB"
                     stroke="#E5BC9B"
                     strokeWidth="0.25px"
+                    tabIndex={-1}
                     onClick={onGeoEventFactory(
                       onSelectCoordinates,
                       geo,
@@ -88,19 +96,26 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
           </Geographies>
           {coordinates.length ? (
             <Marker coordinates={coordinates}>
-              <circle r={2} fill="#f5972a" />
+              <circle r={MARKER_RADIUS} fill={COLOR_EMPHASIS} />
             </Marker>
           ) : null}
           {Array.isArray(cities)
             ? cities.map((city) => (
                 <Marker
+                  role="button"
+                  tabIndex={0}
                   key={city.id}
                   coordinates={city.coordinates}
                   onClick={() => selectCity(city)}
+                  onKeyUp={(e) =>
+                    (e.key === "Enter" || e.code == "Space") && selectCity(city)
+                  }
                 >
                   <circle
-                    r={2}
-                    fill={activeCity?.id === city.id ? "#f5972a" : "#854b39"}
+                    r={MARKER_RADIUS}
+                    fill={
+                      activeCity?.id === city.id ? COLOR_EMPHASIS : COLOR_DARK
+                    }
                   />
                 </Marker>
               ))

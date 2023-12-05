@@ -8,13 +8,14 @@ const Header = () => {
     <header className="header">
       <div className="container header__content">
         <div className="header-logo">
-        <NavLink to="">
-          <img
-            className="header_logo"
-            src={Logo} alt="Sluneční Průvodce logo - odkaz na hlavní stranku"
-          />
-        </NavLink>
-        <p className="header-p">Sluneční Průvodce</p>
+          <NavLink to="/">
+            <img
+              className="header_logo"
+              src={Logo}
+              alt="Sluneční Průvodce logo - odkaz na hlavní stranku"
+            />
+          </NavLink>
+          <p className="header-p">Sluneční Průvodce</p>
         </div>
 
         <nav className="header_links">
