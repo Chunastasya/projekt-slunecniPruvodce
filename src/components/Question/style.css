@@ -3,6 +3,12 @@
 }
 .question__header {
   text-align: center;
+  margin: 0 0 20px;
+}
+@media (min-width: 768px) {
+  .question__header {
+    margin: 0 0 40px;
+  }
 }
 .question__content {
   display: flex;
@@ -119,4 +125,5 @@
 
 .answer--selected {
   background-color: var(--emphasis);
+  border: 4px solid var(--emphasis);
 }

@@ -1,6 +1,11 @@
 .test {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   flex-grow: 1;
+}
+@media (min-width: 768px) {
+  .test {
+    gap: 40px;
+  }
 }
