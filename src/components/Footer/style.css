@@ -3,13 +3,12 @@
   color: white;
   text-align: center;
   padding: 16px;
+  font-size: 12px;
 }
 
-@media (max-width: 450px) {
+@media (min-width: 425px) {
   .footer {
-    font-size: 12px;
-    font-weight: 200;
-    padding: 25px;
-  
+    font-size: inherit;
+    padding: 24px;
   }
 }
