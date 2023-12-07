@@ -6,6 +6,7 @@
     display: block;
     flex-shrink: 0;
     margin: 0 calc(50% - 50vw - 9px);
+    
   }
 
 @media (min-width: 450px) {
@@ -13,6 +14,10 @@
     height: 700px;
   
 }
+}
+
+.home--page-child {
+  padding-top: 25px;
 }
 
 
@@ -33,6 +38,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-bottom: 30px;
 }
 
 .base-btn.btn--homepage {
@@ -76,6 +82,7 @@
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+    padding-top: 35px;
 }
 
 @media (max-width: 450px) {
@@ -101,6 +108,7 @@
         position: absolute;
         top: -10px;
         text-decoration: none;
+        padding-top: 35px;
     }
 
     @media (max-width: 450px) {
@@ -109,5 +117,9 @@
             top: -3px;
             left: -10px;
         }}
+
+        .btn--homepage-zjistit {
+          padding-bottom: 50px;
+        }
 
 

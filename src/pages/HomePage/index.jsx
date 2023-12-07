@@ -22,10 +22,10 @@ pokožky? </h2>
 </div>
         </section>
         <section>
-        <img className='home-page_img' src={Child}></img>
+        <img className='home-page_img home--page-child' src={Child}></img>
         <h2 className='h2-homepage'>Tipy pro ochranu pokožky vašeho dítěte</h2>
         <div className='section-test'>
-        <Link className='base-btn base-btn--right btn--homepage ' to="test-result/-1">Zjistit</Link>
+        <Link className='base-btn base-btn--right btn--homepage btn--homepage-zjistit' to="test-result/-1">Zjistit</Link>
         </div>
         </section>
         <section className='section-makeup'>
