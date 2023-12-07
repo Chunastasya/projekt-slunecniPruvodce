@@ -1,6 +1,6 @@
 
 .home-page_img {
-    min-width: 100vw;
+    width: 100vw;
     height: 300px;
     object-fit: cover;
     display: block;
@@ -24,18 +24,28 @@
 .h2-homepage {
   color: var(--main, #854b39);
   text-align: center;
-  font-size: 64px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 110%; /* 70.4px */
+  font-family: Girassol;
+  margin: 40px 0 30px;
 }
 
-@media (max-width: 450px) {
+@media (min-width: 425px) {
   .h2-homepage {
-      font-size: 30px;
+      font-size: 48px;
     
   }
   }
+
+  @media (min-width: 768px) {
+    .h2-homepage {
+        font-size: 64px;
+        
+      
+    }
+    }
 
 .p-homepage {
   color: #47241a;
@@ -68,11 +78,16 @@
 }
 
 .homepage {
-   margin-top: -40px; 
-   margin-bottom: -40px;
+   margin-top: -20px; 
+   margin-bottom: -20px;
 }
 
-
+@media (min-width: 768px) {
+  .homepage {
+    margin-top: -40px; 
+    margin-bottom: -40px;
+ }
+}
 
 .homepage-text_section {
   max-width: 1100px;
@@ -89,19 +104,19 @@
     position: absolute;
    top: -10px;
     right: 16px;
-    color: var(--main, #854B39);
+    /* color: var(--main, #854B39);
     font-family: Girassol;
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: normal; */
     text-decoration: none;
     padding-top: 35px;
 }
 
 @media (max-width: 450px) {
     .home-page-Pmap {
-        font-size: 30px;
+        /* font-size: 30px; */
         top: -3px;
         left: -10px;
     }}
@@ -112,12 +127,12 @@
     }
 
     .home-page-Precommendation {
-        color: var(--main, #854B39);
+        /* color: var(--main, #854B39);
         font-family: Girassol;
         font-size: 80px;
         font-style: normal;
         font-weight: 400;
-        line-height: normal;
+        line-height: normal; */
         text-decoration: none; 
         position: absolute;
         top: -10px;
@@ -127,7 +142,7 @@
 
     @media (max-width: 450px) {
         .home-page-Precommendation {
-            font-size: 30px;
+            /* font-size: 30px; */
             top: -3px;
             left: -10px;
         }}

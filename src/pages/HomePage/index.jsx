@@ -30,12 +30,12 @@ pokožky? </h2>
         </section>
         <section className='section-makeup'>
         <img className='home-page_img' src={Makeup}></img>
-        <Link to="/recommendation" className='home-page-Precommendation'>hlavní typy produktů <br/>pro ochranu před <br/>sluncem</Link>
+        <Link to="/recommendation" className='home-page-Precommendation h2-homepage'>hlavní typy produktů <br/>pro ochranu před <br/>sluncem</Link>
         </section>
       
         <section className='section-map'>
         <img className='home-page_img' src={Map}></img>
-        <Link to="/map" className='home-page-Pmap'>Mapa UV Indexu</Link>
+        <Link to="/map" className='home-page-Pmap h2-homepage'>Mapa UV Indexu</Link>
         </section>
       </main>
       
