@@ -30,6 +30,13 @@
   line-height: 110%; /* 70.4px */
 }
 
+@media (max-width: 450px) {
+  .h2-homepage {
+      font-size: 30px;
+    
+  }
+  }
+
 .p-homepage {
   color: #47241a;
   text-align: center;
@@ -40,6 +47,13 @@
   line-height: normal;
   padding-bottom: 30px;
 }
+
+@media (max-width: 450px) {
+  .p-homepage {
+      font-size: 18px;
+    
+  }
+  }
 
 .base-btn.btn--homepage {
   padding: 12px 30px;
