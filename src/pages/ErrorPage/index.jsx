@@ -9,7 +9,7 @@ export const ErrorPage = () => {
       <main>
         <p>Asi jste se spletli...</p>
         <Link to="/" className="base-btn">
-          Domu
+          Domů
         </Link>
       </main>
     </div>
