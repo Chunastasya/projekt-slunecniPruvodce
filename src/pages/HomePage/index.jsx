@@ -11,13 +11,13 @@ export const HomePage = () => {
     <div className="homepage">
       <main>
         <section>
-          <img className="homepage__img" src={Womens}></img>
+          <img className="homepage__img" src={Women} />
           <h2 className="homepage__subtitle">
-            Víte, jaká je vaše typy pokožky?{" "}
+          Víte, jaký je váš typ pokožky?{" "}
           </h2>
           <p className="homepage__text ">
             Pojďme to zjistit spolu! Fitzpatrickova stupnice je metoda, kterou
-            dermatologové používají klasifikovat různé typy pokožky na základě
+            dermatologové používají ke klasifikaci různé typy pokožky na základě
             její reakce na sluneční záření. Tato stupnice je založena na vaší
             přirozené barvě pleti, schopnosti opalování a citlivosti na slunce.
             Pro vás je důležité vědět, jaký máte typ pokožky, abyste mohli
@@ -30,7 +30,7 @@ export const HomePage = () => {
           </Link>
         </section>
         <section className="homepage__section--child">
-          <img className="homepage__img" src={Child}></img>
+          <img className="homepage__img" src={Child} />
           <h2 className="homepage__subtitle">
             Tipy pro ochranu pokožky vašeho dítěte
           </h2>
@@ -42,7 +42,7 @@ export const HomePage = () => {
           </Link>
         </section>
         <section className="homepage__section--makeup">
-          <img className="homepage__img" src={Makeup}></img>
+          <img className="homepage__img" src={Makeup} />
           <Link
             to="/recommendation"
             className="homepage__subtitle--recommendation homepage__subtitle"
@@ -54,7 +54,7 @@ export const HomePage = () => {
         </section>
 
         <section className="homepage__section--map">
-          <img className="homepage__img" src={Map}></img>
+          <img className="homepage__img" src={Map} />
           <Link
             to="/map"
             className="homepage__subtitle--map homepage__subtitle"
