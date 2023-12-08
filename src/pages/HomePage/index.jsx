@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
-import './style.css';
+import { Link } from "react-router-dom";
+import "./style.css";
 import Women from "./img/womens1.png";
-import Child from "./img/child2.png"
-import Makeup from "./img/makeup3.png"
-import Map from "./img/map4.png"
-
+import Child from "./img/child2.png";
+import Makeup from "./img/makeup3.png";
+import Map from "./img/map4.png";
 
 export const HomePage = () => {
   return (
@@ -13,7 +12,7 @@ export const HomePage = () => {
         <section>
           <img className="homepage__img" src={Women} />
           <h2 className="homepage__subtitle">
-          Víte, jaký je váš typ pokožky?{" "}
+            Víte, jaký je váš typ pokožky?{" "}
           </h2>
           <p className="homepage__text ">
             Pojďme to zjistit spolu! Fitzpatrickova stupnice je metoda, kterou

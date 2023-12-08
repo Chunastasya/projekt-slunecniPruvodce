@@ -1,7 +1,5 @@
-import "./style.css";
 import { useState, useRef } from "react";
 import { memo } from "react";
-import node from "/assets/texts/node.json";
 import {
   ComposableMap,
   Geographies,
@@ -10,17 +8,21 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoPath } from "d3-geo";
+import "./style.css";
+import node from "/assets/texts/node.json";
 
 const geoUrl =
   "https://github.com/amcharts/amcharts4/blob/master/dist/geodata/es2015/json/region/world/europeUltra.json";
 
 const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
   const map = useRef(null);
+  
   const [zoomData, setZoomData] = useState({
     coordinates: [0, 0],
     zoom: 1,
   });
   const [coordinates, setCoordinates] = useState([]);
+  
   const MAX_WIDTH = 400;
   const MAX_HEIGHT = 300;
   const PROJECTION_CONFIG = {
@@ -30,6 +32,7 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
   const MARKER_RADIUS = 2;
   const COLOR_EMPHASIS = "#f5972a";
   const COLOR_DARK = "#854b39";
+  
   const onGeoEventFactory = (handleCoordinates, geo, projection) => {
     const gPath = geoPath().projection(projection);
 
@@ -58,9 +61,11 @@ const Map = ({ onSelectCoordinates, cities, activeCity, selectCity }) => {
       setCoordinates(c);
     };
   };
+  
   const handleZoom = (geo) => {
     setZoomData(geo);
   };
+  
   return (
     <div>
       <ComposableMap

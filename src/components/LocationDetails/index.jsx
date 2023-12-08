@@ -1,15 +1,17 @@
-import "./style.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./style.css";
 import closeCross from "./img/close-cross.svg";
 
-const LocationDetails = ({ uv, location, date, skinType }) => {
+const LocationDetails = ({ uvData, location, date, skinType }) => {
   const [isOpen, setIsOpen] = useState(true);
+  
   useEffect(() => {
     if (!isOpen) {
       setIsOpen(true);
     }
-  }, [uv]);
+  }, [uvData]);
+
   const getTime = (min) => {
     let result = "";
     const hours = Math.floor(min / 60);
@@ -32,6 +34,7 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
     }`;
     return result;
   };
+  
   return (
     <div
       className={
@@ -49,7 +52,7 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
       <h2 className="location-details__title">{location.name}</h2>
       <div className="location-details__card">
         <div className="location-details__body">
-          {uv?.sun_info?.sun_position?.altitude > 0 ? (
+          {uvData?.sun_info?.sun_position?.altitude > 0 ? (
             <>
               <div className="location-details__section">
                 <div className="location-details__subtitle">
@@ -58,14 +61,14 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
                 <ul className="location-details__list">
                   <li className="uv-item">
                     <div className="uv-item__title">UV Index</div>
-                    <div className="uv-item__text">{uv.uv}</div>
+                    <div className="uv-item__text">{uvData.uv}</div>
                   </li>
                 </ul>
               </div>
               <div className="location-details__section">
                 <div className="location-details__subtitle">Bezpečný čas</div>
                 <ul className="location-details__list">
-                  {Object.values(uv.safe_exposure_time || []).map(
+                  {Object.values(uvData.safe_exposure_time || []).map(
                     (value, i) => (
                       <li
                         className={
@@ -87,7 +90,7 @@ const LocationDetails = ({ uv, location, date, skinType }) => {
             </>
           ) : (
             <div className="location-details__section">
-              {uv?.error ||
+              {uvData?.error ||
                 "V současné době je nízký UV index kvůli tmavé době. To znamená, že se můžete bezpečně pohybovat venku bez další ochrany. Užijte si večerní procházku!"}
             </div>
           )}

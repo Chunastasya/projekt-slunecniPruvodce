@@ -1,9 +1,11 @@
 import "./style.css";
 
 const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
+  
   const handleClick = (answer) => {
     onSelect({ [currentQuestion.id]: answer.value });
   };
+  
   return (
     <div className="question">
       <h1 className="question__header">{currentQuestion.question}</h1>

@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import test from "/assets/texts/test.json";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Question from "../../components/Question";
-import "./style.css";
 import Navigation from "../../components/Navigation";
+import "./style.css";
+import test from "/assets/texts/test.json";
 
 export const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(test[0]);
@@ -15,6 +14,7 @@ export const TestPage = () => {
   const findQuestion = (id) => {
     setCurrentQuestion(test.find((q) => q.id === id));
   };
+  
   useEffect(() => {
     setEnableQuestions(
       test.map((q) => ({

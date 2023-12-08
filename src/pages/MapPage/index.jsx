@@ -1,10 +1,10 @@
-import "./style.css";
 import { useState, useEffect } from "react";
 import Map from "../../components/Map";
 import LocationDetails from "../../components/LocationDetails";
 import Loader from "../../components/Loader";
-import cities from "/assets/texts/cities.json";
 import CitiesList from "../../components/CitiesList";
+import "./style.css";
+import cities from "/assets/texts/cities.json";
 
 const MapPage = () => {
   const [dataUV, setDataUV] = useState(null);
@@ -16,18 +16,23 @@ const MapPage = () => {
   const [initialDate, setInitialDate] = useState(
     new Date().toISOString().split(".")[0]
   );
+
+  const OPEN_UV_KEY = "openuv-3bsazrlo7ffpej-io"
+
   useEffect(() => {
     const type = localStorage.getItem("skin-type");
     if (type > -1) {
       setSkinType(type);
     }
   }, []);
+
   useEffect(() => {
     if (!activeCity) {
       return;
     }
     chooseLocation(activeCity.coordinates, { properties: activeCity });
   }, [activeCity]);
+
   useEffect(() => {
     const getUVIndex = async () => {
       if (!(coordinates && coordinates.length > 1)) {
@@ -36,7 +41,7 @@ const MapPage = () => {
       setIsLoading(true);
       try {
         const myHeaders = new Headers();
-        myHeaders.append("x-access-token", "openuv-3bsazrlo7ffpej-io");
+        myHeaders.append("x-access-token", OPEN_UV_KEY);
         myHeaders.append("Content-Type", "application/json");
 
         const requestOptions = {
@@ -58,7 +63,7 @@ const MapPage = () => {
           ...(dataUV || {}),
           uv: {
             error:
-              "Litujeme, ale maximální počet dotazů na API pro dnešek byl dosažen. Prosím, počkejte až do zítřka pro další dotazy.",
+              "Promiňte, ale kvůli velkému množství dotazů jsme dočasně omezeni. Zkuste to prosím znovu zítra.",
           },
         });
         console.log("error", error);
@@ -67,6 +72,7 @@ const MapPage = () => {
     };
     getUVIndex();
   }, [coordinates, date]);
+
   const chooseLocation = async (c, geo, projection) => {
     setCoordinates(c);
     setDataUV({
@@ -77,6 +83,7 @@ const MapPage = () => {
       setActiveCity(null);
     }
   };
+
   return (
     <>
       {isLoading ? <Loader /> : null}
