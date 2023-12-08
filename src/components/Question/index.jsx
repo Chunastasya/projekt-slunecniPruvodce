@@ -23,7 +23,7 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
           }
         >
           {currentQuestion.answers.map((answer) => (
-            <div
+            <button
               className={
                 "answer " +
                 (currentAnswer === answer.value ? "answer--selected" : "")
@@ -40,7 +40,7 @@ const Question = ({ currentQuestion, onSelect, currentAnswer }) => {
               ) : null}
 
               <p className="answer__text">{answer.text}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>
