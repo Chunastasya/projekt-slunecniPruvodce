@@ -17,7 +17,7 @@ const MapPage = () => {
     new Date().toISOString().split(".")[0]
   );
 
-  const OPEN_UV_KEY = "openuv-3bsazrlo7ffpej-io"
+  const OPEN_UV_KEY = "openuv-3bsazrlo7ffpej-io";
 
   useEffect(() => {
     const type = localStorage.getItem("skin-type");
@@ -56,12 +56,12 @@ const MapPage = () => {
         const data = await response.json();
         setDataUV({
           ...(dataUV || {}),
-          uv: data.result,
+          uvData: data.result,
         });
       } catch (error) {
         setDataUV({
           ...(dataUV || {}),
-          uv: {
+          uvData: {
             error:
               "Promiňte, ale kvůli velkému množství dotazů jsme dočasně omezeni. Zkuste to prosím znovu zítra.",
           },
@@ -115,7 +115,7 @@ const MapPage = () => {
             selectCity={setActiveCity}
           />
         </div>
-        {dataUV && dataUV.uv && dataUV.location ? (
+        {dataUV && dataUV.uvData && dataUV.location ? (
           <div className="map-content__overlay">
             <LocationDetails {...dataUV} date={date} skinType={skinType} />
           </div>
