@@ -10,6 +10,8 @@ html {
   --primary-light: #e5bc9b;
   --secondary-light: #f6d6cb;
   --emphasis: #f5972a;
+  --listing-width: 100vw;
+  --listing-height: 100vh;
 }
 
 body {
@@ -34,7 +36,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: var(--listing-height);
 }
 
 .container {
