@@ -6,15 +6,20 @@ import { useEffect } from "react";
 
 const App = () => {
     useEffect(() => {
-      document.documentElement?.style.setProperty(
-        "--listing-height",
-        `${window.visualViewport.height}px`
-      );
-      document.documentElement?.style.setProperty(
-        "--listing-width",
-        `${window.visualViewport.width}px`
-      );
+      const resizeHandler = () => {
+        document.documentElement?.style.setProperty(
+          "--listing-height",
+          `${window.visualViewport.height}px`
+        );
+        document.documentElement?.style.setProperty(
+          "--listing-width",
+          `${window.visualViewport.width}px`
+        );
+      }
+      resizeHandler();
+      document.addEventListener('resize', resizeHandler);
     }, [])
+
     return (
       <div className="main_container">
         <Header />

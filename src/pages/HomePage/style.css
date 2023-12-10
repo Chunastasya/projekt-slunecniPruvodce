@@ -29,7 +29,7 @@
 
 @media (min-width: 960px) {
   .homepage__img {
-    margin: 0 calc(50% - var(--listing-width) / 2 - 9px);
+    margin: 0 calc(50% - var(--listing-width) / 2);
   }
 }
 
