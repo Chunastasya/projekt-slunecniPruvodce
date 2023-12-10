@@ -16,9 +16,9 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: calc(var(--listing-width) / 2);
+  width: calc(50vw);
   right: 0;
-  transform: translateX(var(--listing-width) / 2);
+  transform: translateX(50vw);
   background: var(--primary-dark);
   z-index: -1;
 }
