@@ -94,7 +94,7 @@
     top: inherit;
     left: inherit;
     border-radius: 50px 0 0 0;
-    z-index: 1;
+    z-index: 0;
   }
 }
 
