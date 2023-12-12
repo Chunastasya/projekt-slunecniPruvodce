@@ -70,6 +70,7 @@
     position: static;
     background-color: transparent;
     display: flex;
+    z-index: 0;
   }
 }
 
